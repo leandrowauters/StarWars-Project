@@ -41,6 +41,7 @@ class PeopleListViewController: UIViewController {
         peopleTableView.dataSource = self
         peopleTableView.delegate = self
         peopleTableView.prefetchDataSource = self
+        peopleTableView.separatorStyle = .none
         peopleTableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
     }
     @IBAction func sortByPressed(_ sender: UIButton) {

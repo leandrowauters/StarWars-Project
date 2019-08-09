@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWarLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-sW-Qj5">
-                    <rect key="frame" x="0.0" y="69" width="414" height="135"/>
+                    <rect key="frame" x="0.0" y="69" width="414.00000000000023" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="Oqi-o7-fbH"/>
                     </constraints>
@@ -46,24 +46,69 @@
                         <constraint firstItem="Dhw-10-c9k" firstAttribute="centerY" secondItem="bTl-Wt-7Bd" secondAttribute="centerY" id="xYV-Lt-ZwR"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-it-S1c">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-it-S1c">
                     <rect key="frame" x="0.0" y="284" width="414" height="578"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bZ-Ye-bhe" customClass="BorderedButton" customModule="StarWarsProject" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="244" width="414" height="40"/>
-                    <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="8UX-t7-qEY"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                    <inset key="titleEdgeInsets" minX="-41" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="340" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Sort By:" image="down"/>
-                    <connections>
-                        <action selector="sortByPressed:" destination="-1" eventType="touchUpInside" id="P2u-gO-Lcv"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j5Q-6x-Zuu">
+                    <rect key="frame" x="0.0" y="244" width="157" height="160"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bZ-Ye-bhe" customClass="BorderedButton" customModule="StarWarsProject" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="157" height="40"/>
+                            <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="8UX-t7-qEY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <inset key="titleEdgeInsets" minX="-41" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="340" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sort By:" image="down"/>
+                            <connections>
+                                <action selector="sortByPressed:" destination="-1" eventType="touchUpInside" id="P2u-gO-Lcv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-LV-uik">
+                            <rect key="frame" x="0.0" y="40" width="157" height="40"/>
+                            <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="hKl-7X-uat"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <inset key="imageEdgeInsets" minX="340" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sort By:"/>
+                            <connections>
+                                <action selector="sortByPressed:" destination="-1" eventType="touchUpInside" id="ZhC-0F-a4Q"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQa-qH-MWi">
+                            <rect key="frame" x="0.0" y="80" width="157" height="40"/>
+                            <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="n0x-dP-AAf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <inset key="imageEdgeInsets" minX="340" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sort By:"/>
+                            <connections>
+                                <action selector="sortByPressed:" destination="-1" eventType="touchUpInside" id="iQc-UN-kqU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR4-oL-7I4">
+                            <rect key="frame" x="0.0" y="120" width="157" height="40"/>
+                            <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="8Ni-b4-T4X"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <inset key="imageEdgeInsets" minX="340" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Sort By:"/>
+                            <connections>
+                                <action selector="sortByPressed:" destination="-1" eventType="touchUpInside" id="07E-WL-yPa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-x3-FJi">
                     <rect key="frame" x="20" y="64" width="50" height="50"/>
                     <constraints>
@@ -79,20 +124,16 @@
             <color key="backgroundColor" red="0.00057442253455519676" green="0.16267839074134827" blue="0.23275220394134521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="pf5-it-S1c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5JZ-cy-nyB"/>
-                <constraint firstItem="pf5-it-S1c" firstAttribute="top" secondItem="4bZ-Ye-bhe" secondAttribute="bottom" id="5bl-KI-nl0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pf5-it-S1c" secondAttribute="bottom" id="LBl-3R-DsF"/>
                 <constraint firstItem="bTl-Wt-7Bd" firstAttribute="top" secondItem="M7o-sW-Qj5" secondAttribute="bottom" id="SXX-LG-CFJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pf5-it-S1c" secondAttribute="trailing" id="TCo-1x-YAD"/>
                 <constraint firstItem="M7o-sW-Qj5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XOc-aq-l2d"/>
                 <constraint firstItem="M7o-sW-Qj5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="Y7K-ZK-BOf"/>
                 <constraint firstItem="bTl-Wt-7Bd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b62-s4-1zU"/>
-                <constraint firstItem="4bZ-Ye-bhe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="crk-UI-rc9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bTl-Wt-7Bd" secondAttribute="trailing" id="dko-fg-60o"/>
                 <constraint firstItem="QTe-x3-FJi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dpv-wl-WSC"/>
-                <constraint firstItem="4bZ-Ye-bhe" firstAttribute="top" secondItem="bTl-Wt-7Bd" secondAttribute="bottom" id="hfD-u4-fcG"/>
                 <constraint firstItem="QTe-x3-FJi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="vF7-3K-GdM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M7o-sW-Qj5" secondAttribute="trailing" id="wb2-vp-epb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4bZ-Ye-bhe" secondAttribute="trailing" id="xvH-Uj-1ZJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
