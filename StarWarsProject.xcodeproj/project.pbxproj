@@ -58,6 +58,7 @@
 		D54D0CDC22FDBA120035AD25 /* StarWarsProject */ = {
 			isa = PBXGroup;
 			children = (
+				D54D0CEC22FDBA160035AD25 /* Info.plist */,
 				D54D0CF922FDCABD0035AD25 /* Other */,
 				D54D0CF622FDCA320035AD25 /* Controllers */,
 				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
@@ -80,7 +81,6 @@
 			children = (
 				D54D0CDD22FDBA120035AD25 /* AppDelegate.swift */,
 				D54D0CE922FDBA160035AD25 /* LaunchScreen.storyboard */,
-				D54D0CEC22FDBA160035AD25 /* Info.plist */,
 				D54D0CE422FDBA120035AD25 /* StarWarsProject.xcdatamodeld */,
 			);
 			path = Other;

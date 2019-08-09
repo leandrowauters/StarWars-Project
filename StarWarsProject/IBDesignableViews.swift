@@ -17,5 +17,7 @@ class WhiteBorderedButton: UIButton {
         layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         layer.cornerRadius = bounds.height / 2
         clipsToBounds = true
+        titleLabel?.font = UIFont(name: "Futura-Bold", size: 30)
+        setTitleColor(.white, for: .normal)
     }
 }
