@@ -13,6 +13,7 @@
 		D54D0CEB22FDBA160035AD25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54D0CE922FDBA160035AD25 /* LaunchScreen.storyboard */; };
 		D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */; };
 		D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */; };
+		D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D54D0CEC22FDBA160035AD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreeenViewController.swift; sourceTree = "<group>"; };
 		D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeScreeenViewController.xib; sourceTree = "<group>"; };
+		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		D54D0CDC22FDBA120035AD25 /* StarWarsProject */ = {
 			isa = PBXGroup;
 			children = (
-				D54D0CDD22FDBA120035AD25 /* AppDelegate.swift */,
+				D54D0CF922FDCABD0035AD25 /* Other */,
+				D54D0CF622FDCA320035AD25 /* Controllers */,
+				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
+				D54D0CFA22FDCB5E0035AD25 /* New Group */,
+			);
+			path = StarWarsProject;
+			sourceTree = "<group>";
+		};
+		D54D0CF622FDCA320035AD25 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */,
 				D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */,
-				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D54D0CF922FDCABD0035AD25 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D54D0CDD22FDBA120035AD25 /* AppDelegate.swift */,
 				D54D0CE922FDBA160035AD25 /* LaunchScreen.storyboard */,
 				D54D0CEC22FDBA160035AD25 /* Info.plist */,
 				D54D0CE422FDBA120035AD25 /* StarWarsProject.xcdatamodeld */,
 			);
-			path = StarWarsProject;
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D54D0CFA22FDCB5E0035AD25 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
+				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
 			);
