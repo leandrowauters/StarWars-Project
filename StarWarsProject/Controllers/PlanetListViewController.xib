@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWarLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="lXG-AT-Dvy">
-                    <rect key="frame" x="0.0" y="44" width="414" height="135"/>
+                    <rect key="frame" x="0.0" y="69" width="414" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="2ZZ-tH-fdL"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-ai-z8M" customClass="BorderedView" customModule="StarWarsProject" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="179" width="414" height="40"/>
+                    <rect key="frame" x="0.0" y="204" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY6-Kn-uYD">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -50,7 +50,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHD-f1-2AP" customClass="BorderedButton" customModule="StarWarsProject" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="219" width="414" height="40"/>
+                    <rect key="frame" x="0.0" y="244" width="414" height="40"/>
                     <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ebF-Yh-seq"/>
@@ -63,14 +63,27 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5sw-Zv-3vC">
-                    <rect key="frame" x="0.0" y="259" width="414" height="603"/>
+                    <rect key="frame" x="0.0" y="284" width="414" height="578"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrp-zm-Pa3">
+                    <rect key="frame" x="20" y="64" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5Pc-eE-lnJ"/>
+                        <constraint firstAttribute="width" constant="50" id="LsE-xk-eye"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="fSC-Sf-hHa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5sw-Zv-3vC" secondAttribute="trailing" id="0q2-ny-Jso"/>
+                <constraint firstItem="Xrp-zm-Pa3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3oF-nL-n6b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5sw-Zv-3vC" secondAttribute="bottom" id="6EO-nL-01w"/>
+                <constraint firstItem="Xrp-zm-Pa3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="7ZO-bk-pRV"/>
                 <constraint firstItem="5sw-Zv-3vC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lpi-Zh-gOT"/>
                 <constraint firstItem="XcC-ai-z8M" firstAttribute="top" secondItem="lXG-AT-Dvy" secondAttribute="bottom" id="O3v-SM-Jsc"/>
                 <constraint firstItem="KHD-f1-2AP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qcg-6Q-1DP"/>
@@ -78,7 +91,7 @@
                 <constraint firstItem="KHD-f1-2AP" firstAttribute="top" secondItem="XcC-ai-z8M" secondAttribute="bottom" id="Rk3-eu-xnA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KHD-f1-2AP" secondAttribute="trailing" id="UXg-TU-gI8"/>
                 <constraint firstItem="XcC-ai-z8M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XRz-Wf-mFO"/>
-                <constraint firstItem="lXG-AT-Dvy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ce0-XP-1Zz"/>
+                <constraint firstItem="lXG-AT-Dvy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="ce0-XP-1Zz"/>
                 <constraint firstItem="5sw-Zv-3vC" firstAttribute="top" secondItem="KHD-f1-2AP" secondAttribute="bottom" id="hno-hV-ZQy"/>
                 <constraint firstItem="lXG-AT-Dvy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r4j-Bm-cJy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lXG-AT-Dvy" secondAttribute="trailing" id="rid-0L-PUF"/>
@@ -87,6 +100,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back" width="50" height="50"/>
         <image name="down" width="48" height="48"/>
         <image name="starWarLogoWhite" width="1388" height="838"/>
     </resources>

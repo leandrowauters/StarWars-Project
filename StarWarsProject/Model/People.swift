@@ -1,0 +1,33 @@
+//
+//  People.swift
+//  StarWarsProject
+//
+//  Created by Leandro Wauters on 8/9/19.
+//  Copyright © 2019 Leandro Wauters. All rights reserved.
+//
+
+import Foundation
+
+struct People: Codable {
+    struct ResultPeopleWrapper: Codable {
+        let name: String
+        let hairColor: String
+        let eyeColor: String
+        let birthYear: String
+        let created: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case name
+            case hairColor = "hair_color"
+            case eyeColor = "eye_color"
+            case birthYear = "birth_year"
+            case created
+        }
+    }
+    let results: [ResultPeopleWrapper]
+    
+    
+}
+
+
+

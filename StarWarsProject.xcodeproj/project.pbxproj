@@ -18,8 +18,13 @@
 		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
 		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
 		D5E8FB4922FDD0A8002E4CF2 /* PlanetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */; };
-		D5E8FB4C22FDD564002E4CF2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4A22FDD564002E4CF2 /* TableViewCell.swift */; };
-		D5E8FB4D22FDD564002E4CF2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4B22FDD564002E4CF2 /* TableViewCell.xib */; };
+		D5E8FB4C22FDD564002E4CF2 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4A22FDD564002E4CF2 /* ListCell.swift */; };
+		D5E8FB4D22FDD564002E4CF2 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4B22FDD564002E4CF2 /* ListCell.xib */; };
+		D5E8FB5222FDDCA5002E4CF2 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5122FDDCA5002E4CF2 /* Planets.swift */; };
+		D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5322FDDCAE002E4CF2 /* People.swift */; };
+		D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */; };
+		D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */; };
+		D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +41,13 @@
 		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
 		D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetListViewController.xib; sourceTree = "<group>"; };
-		D5E8FB4A22FDD564002E4CF2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		D5E8FB4B22FDD564002E4CF2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		D5E8FB4A22FDD564002E4CF2 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		D5E8FB4B22FDD564002E4CF2 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		D5E8FB5122FDDCA5002E4CF2 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		D5E8FB5322FDDCAE002E4CF2 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +82,12 @@
 			children = (
 				D54D0CEC22FDBA160035AD25 /* Info.plist */,
 				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
+				D5E8FB5522FDDCC7002E4CF2 /* Model */,
 				D54D0CF922FDCABD0035AD25 /* Other */,
 				D54D0CF622FDCA320035AD25 /* Controllers */,
 				D5E8FB4E22FDD661002E4CF2 /* Cell */,
 				D54D0CFA22FDCB5E0035AD25 /* Utilities */,
+				D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */,
 			);
 			path = StarWarsProject;
 			sourceTree = "<group>";
@@ -107,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */,
+				D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */,
+				D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -114,10 +128,19 @@
 		D5E8FB4E22FDD661002E4CF2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D5E8FB4A22FDD564002E4CF2 /* TableViewCell.swift */,
-				D5E8FB4B22FDD564002E4CF2 /* TableViewCell.xib */,
+				D5E8FB4A22FDD564002E4CF2 /* ListCell.swift */,
+				D5E8FB4B22FDD564002E4CF2 /* ListCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D5E8FB5522FDDCC7002E4CF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5E8FB5122FDDCA5002E4CF2 /* Planets.swift */,
+				D5E8FB5322FDDCAE002E4CF2 /* People.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E8FB4922FDD0A8002E4CF2 /* PlanetListViewController.xib in Resources */,
-				D5E8FB4D22FDD564002E4CF2 /* TableViewCell.xib in Resources */,
+				D5E8FB4D22FDD564002E4CF2 /* ListCell.xib in Resources */,
 				D54D0CEB22FDBA160035AD25 /* LaunchScreen.storyboard in Resources */,
 				D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */,
 				D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */,
@@ -196,11 +219,16 @@
 			files = (
 				D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */,
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
+				D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */,
+				D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
+				D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,
+				D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */,
 				D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */,
-				D5E8FB4C22FDD564002E4CF2 /* TableViewCell.swift in Sources */,
+				D5E8FB4C22FDD564002E4CF2 /* ListCell.swift in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
+				D5E8FB5222FDDCA5002E4CF2 /* Planets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ5CF8LT37;
 				INFOPLIST_FILE = StarWarsProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -359,6 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ5CF8LT37;
 				INFOPLIST_FILE = StarWarsProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

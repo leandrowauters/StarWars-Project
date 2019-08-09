@@ -22,6 +22,9 @@ class PlanetListViewController: UIViewController {
         
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+       navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

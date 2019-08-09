@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class ListCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -17,11 +17,13 @@ class WelcomeScreeenViewController: UIViewController {
     }
 
     @IBAction func peopleButtonPressed(_ sender: UIButton) {
-        
+        let peopleListVC = PeopleListViewController()
+        navigationController?.pushViewController(peopleListVC, animated: true)
     }
     
     @IBAction func planetsButtonPressed(_ sender: UIButton) {
-        
+        let planetsListVC = PlanetListViewController()
+        navigationController?.pushViewController(planetsListVC, animated: true)
     }
     
 
