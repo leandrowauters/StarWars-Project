@@ -21,3 +21,21 @@ class WhiteBorderedButton: UIButton {
         setTitleColor(.white, for: .normal)
     }
 }
+
+class BorderedButton: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        titleLabel?.font = UIFont(name: "Futura-Bold", size: 30)
+        setTitleColor(.white, for: .normal)
+    }
+}
+
+class BorderedView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+}

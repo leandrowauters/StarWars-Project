@@ -17,9 +17,11 @@ class WelcomeScreeenViewController: UIViewController {
     }
 
     @IBAction func peopleButtonPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func planetsButtonPressed(_ sender: UIButton) {
+        
     }
     
 

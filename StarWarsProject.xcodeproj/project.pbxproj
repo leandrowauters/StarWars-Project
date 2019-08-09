@@ -14,6 +14,10 @@
 		D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */; };
 		D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */; };
 		D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */; };
+		D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */; };
+		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
+		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
+		D5E8FB4922FDD0A8002E4CF2 /* PlanetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreeenViewController.swift; sourceTree = "<group>"; };
 		D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeScreeenViewController.xib; sourceTree = "<group>"; };
 		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
+		D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
+		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
+		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
+		D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				D54D0CEC22FDBA160035AD25 /* Info.plist */,
+				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
 				D54D0CF922FDCABD0035AD25 /* Other */,
 				D54D0CF622FDCA320035AD25 /* Controllers */,
-				D54D0CE722FDBA160035AD25 /* Assets.xcassets */,
 				D54D0CFA22FDCB5E0035AD25 /* New Group */,
 			);
 			path = StarWarsProject;
@@ -72,6 +80,10 @@
 			children = (
 				D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */,
 				D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */,
+				D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */,
+				D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */,
+				D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */,
+				D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,7 +164,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E8FB4922FDD0A8002E4CF2 /* PlanetListViewController.xib in Resources */,
 				D54D0CEB22FDBA160035AD25 /* LaunchScreen.storyboard in Resources */,
+				D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */,
 				D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */,
 				D54D0CE822FDBA160035AD25 /* Assets.xcassets in Resources */,
 			);
@@ -165,9 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */,
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,
+				D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
