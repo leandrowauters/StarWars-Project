@@ -46,9 +46,6 @@ class PlanetListViewController: UIViewController {
         }
     }
     
-    @IBAction func sortByPressed(_ sender: UIButton) {
-        
-    }
     
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)

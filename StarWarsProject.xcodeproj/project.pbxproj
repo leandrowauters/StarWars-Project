@@ -14,6 +14,8 @@
 		D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */; };
 		D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */; };
 		D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */; };
+		D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */; };
+		D559272822FE0B4C00369B33 /* PeopleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */; };
 		D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */; };
 		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
 		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
@@ -38,6 +40,8 @@
 		D54D0CF222FDC5B60035AD25 /* WelcomeScreeenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreeenViewController.swift; sourceTree = "<group>"; };
 		D54D0CF322FDC5B60035AD25 /* WelcomeScreeenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeScreeenViewController.xib; sourceTree = "<group>"; };
 		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
+		D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */,
 				D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */,
 				D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */,
+				D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */,
+				D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */,
 				D54D0CF522FDC5B60035AD25 /* WelcomeScreeenViewController.xib in Resources */,
 				D54D0CE822FDBA160035AD25 /* Assets.xcassets in Resources */,
+				D559272822FE0B4C00369B33 /* PeopleDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +231,7 @@
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
 				D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */,
 				D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */,
+				D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
 				D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,

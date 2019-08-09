@@ -8,8 +8,12 @@
 
 import UIKit
 
+enum SortByButtons: String {
+    case Name, Height, Weight
+}
 class PeopleListViewController: UIViewController {
 
+    
     let peopleClient = PeopleClient()
     var people: [People.ResultPeopleWrapper] = [] {
         didSet {
@@ -19,6 +23,8 @@ class PeopleListViewController: UIViewController {
         }
     }
     @IBOutlet weak var peopleTableView: UITableView!
+
+    
     
     
     override func viewDidLoad() {
@@ -44,9 +50,7 @@ class PeopleListViewController: UIViewController {
         peopleTableView.separatorStyle = .none
         peopleTableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
     }
-    @IBAction func sortByPressed(_ sender: UIButton) {
-        
-    }
+
     
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)
