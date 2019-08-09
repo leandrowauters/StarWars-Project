@@ -39,3 +39,11 @@ class BorderedView: UIView {
         layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }
+
+class RoundedView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.height / 2
+        clipsToBounds = true
+    }
+}

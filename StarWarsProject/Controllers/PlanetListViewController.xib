@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWarLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="lXG-AT-Dvy">
-                    <rect key="frame" x="0.0" y="44" width="414.00000000000023" height="135"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="2ZZ-tH-fdL"/>
                     </constraints>
