@@ -22,7 +22,7 @@ class PeopleListViewController: UIViewController {
             }
         }
     }
-    var hairColor = [String]()
+
     @IBOutlet weak var peopleTableView: UITableView!
 
     
@@ -30,11 +30,14 @@ class PeopleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchPeople()
+        fetchPeople {
+            return
+        }
         
     }
 
-    private func fetchPeople() {
+    private func fetchPeople(done:() -> Void
+        ) {
         peopleClient.fetchPeople { (appError, people) in
             if let appError = appError {
                 print(appError.errorMessage())
@@ -74,13 +77,17 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
         }
         let person = people[indexPath.row]
         cell.nameLabel.text = person.name
+        cell.selectionStyle = .none
+        cell.backgroundColor = #colorLiteral(red: 0.0005744225346, green: 0.1626783907, blue: 0.2327522039, alpha: 1)
+        cell.cellSubView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
         return cell
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         if indexPaths.contains(where: isLoadingCell) {
-            fetchPeople()
-
+            fetchPeople {
+                <#code#>
+            }
         }
     }
     

@@ -19,7 +19,7 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var eyeColorView: RoundedView!
     
     let person: People.ResultPeopleWrapper!
-    
+    let colorHelper = ColorHelper()
     
     
     
@@ -35,6 +35,17 @@ class PeopleDetailViewController: UIViewController {
         eyeColorLabel.text = "Eye Color: \(person.eyeColor)"
         birthYearLabel.text = "Birth Year: \(person.birthYear)"
         dateCreatedLabel.text = "Date Created: \(person.created.changeDateFormat(dateFormat: "MMM d, yyyy"))"
+        if let color = colorHelper.getHairColor(hairColor: person.hairColor) {
+            hairColorView.backgroundColor = color
+        } else {
+            hairColorView.isHidden = true
+        }
+        
+        if let eyeColor = colorHelper.getEyeColor(eyeColor: person.eyeColor) {
+            eyeColorView.backgroundColor = eyeColor
+        } else {
+            eyeColorView.isHidden = true
+        }
     }
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, person: People.ResultPeopleWrapper) {
@@ -44,6 +55,10 @@ class PeopleDetailViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @IBAction func backWasPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
 }

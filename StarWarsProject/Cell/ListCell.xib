@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,12 +27,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eiw-eE-iAC">
+                                <rect key="frame" x="111.5" y="6.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0dv-Ij-Ttn" firstAttribute="centerX" secondItem="4nw-Xq-GJC" secondAttribute="centerX" id="2JA-PF-o5B"/>
                             <constraint firstAttribute="trailing" secondItem="0dv-Ij-Ttn" secondAttribute="trailing" constant="10" id="3hS-ay-9KZ"/>
+                            <constraint firstItem="Eiw-eE-iAC" firstAttribute="centerY" secondItem="0dv-Ij-Ttn" secondAttribute="centerY" id="OGe-xz-tQa"/>
                             <constraint firstItem="0dv-Ij-Ttn" firstAttribute="centerY" secondItem="4nw-Xq-GJC" secondAttribute="centerY" id="Wt5-qX-obR"/>
+                            <constraint firstItem="Eiw-eE-iAC" firstAttribute="centerX" secondItem="0dv-Ij-Ttn" secondAttribute="centerX" id="fVe-iQ-9BW"/>
                             <constraint firstItem="0dv-Ij-Ttn" firstAttribute="leading" secondItem="4nw-Xq-GJC" secondAttribute="leading" constant="10" id="ot9-c3-dlq"/>
                         </constraints>
                     </view>
@@ -47,6 +51,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="Eiw-eE-iAC" id="eLY-cD-bbv"/>
+                <outlet property="cellSubView" destination="4nw-Xq-GJC" id="oYi-Dd-DLe"/>
                 <outlet property="nameLabel" destination="0dv-Ij-Ttn" id="1i9-S0-9sY"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="174.77678571428569"/>
