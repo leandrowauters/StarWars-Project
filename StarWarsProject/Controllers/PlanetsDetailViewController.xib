@@ -15,6 +15,7 @@
                 <outlet property="climateLabel" destination="qQt-Jc-OJq" id="m1a-eX-RYw"/>
                 <outlet property="dateCreatedLabel" destination="1jd-vS-DiZ" id="g21-N0-myy"/>
                 <outlet property="diameterLabel" destination="w8b-eS-rKg" id="F2b-o3-s0W"/>
+                <outlet property="favoriteButton" destination="YAx-Rk-DIr" id="wRO-dh-8SG"/>
                 <outlet property="gravityLabel" destination="Mou-at-iNm" id="HJr-bm-CA3"/>
                 <outlet property="nameLabel" destination="vNm-iX-34g" id="z8N-DP-DBR"/>
                 <outlet property="populationLabel" destination="SvN-e1-Gyo" id="Ead-iK-dxk"/>
@@ -51,20 +52,31 @@
                     <rect key="frame" x="0.0" y="204" width="414" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vNm-iX-34g">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                            <rect key="frame" x="72.5" y="0.0" width="269" height="55"/>
                             <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAx-Rk-DIr">
+                            <rect key="frame" x="341.5" y="10" width="42.5" height="35"/>
+                            <state key="normal" image="favoriteEmpty"/>
+                            <connections>
+                                <action selector="favoritePressed:" destination="-1" eventType="touchUpInside" id="4Ku-JD-HLe"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="1pg-dT-mqB"/>
-                        <constraint firstItem="vNm-iX-34g" firstAttribute="width" secondItem="kAX-Iq-oTj" secondAttribute="width" id="Ddx-1G-N7k"/>
+                        <constraint firstItem="vNm-iX-34g" firstAttribute="width" secondItem="kAX-Iq-oTj" secondAttribute="width" multiplier="0.65" id="Ddx-1G-N7k"/>
+                        <constraint firstAttribute="trailing" secondItem="YAx-Rk-DIr" secondAttribute="trailing" constant="30" id="Pck-Bu-xnB"/>
+                        <constraint firstItem="YAx-Rk-DIr" firstAttribute="leading" secondItem="vNm-iX-34g" secondAttribute="trailing" id="e7K-ay-5rv"/>
                         <constraint firstItem="vNm-iX-34g" firstAttribute="centerX" secondItem="kAX-Iq-oTj" secondAttribute="centerX" id="nkl-g1-cyy"/>
                         <constraint firstItem="vNm-iX-34g" firstAttribute="centerY" secondItem="kAX-Iq-oTj" secondAttribute="centerY" id="uEv-8c-3Wd"/>
                         <constraint firstItem="vNm-iX-34g" firstAttribute="height" secondItem="kAX-Iq-oTj" secondAttribute="height" id="va0-K3-zbo"/>
+                        <constraint firstAttribute="bottom" secondItem="YAx-Rk-DIr" secondAttribute="bottom" constant="10" id="wq5-2p-zS0"/>
+                        <constraint firstItem="YAx-Rk-DIr" firstAttribute="top" secondItem="kAX-Iq-oTj" secondAttribute="top" constant="10" id="y86-yD-y4w"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eln-88-w3v" customClass="PlanetsBorderView" customModule="StarWarsProject" customModuleProvider="target">
@@ -251,6 +263,7 @@
     </objects>
     <resources>
         <image name="back" width="50" height="50"/>
+        <image name="favoriteEmpty" width="96" height="96"/>
         <image name="starWarLogoWhite" width="1388" height="838"/>
     </resources>
 </document>

@@ -11,9 +11,12 @@ import UIKit
 class PlanetListViewController: UIViewController {
 
     @IBOutlet weak var planetsTableView: UITableView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var tableViewTitle: UILabel!
     
     let planetClient = PlanetClient()
-    
+    var favoritePressed = true
+    var allPlanets = [Planet.ResultWrapper]()
     var planets: [Planet.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -34,6 +37,7 @@ class PlanetListViewController: UIViewController {
         planetsTableView.prefetchDataSource = self
         planetsTableView.separatorStyle = .none
         planetsTableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
+        planetsTableView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
     }
     private func fetchPlanets() {
         planetClient.fetchPlanets { (appError, planets) in
@@ -42,10 +46,24 @@ class PlanetListViewController: UIViewController {
             }
             if let planets = planets {
                 self.planets.append(contentsOf: planets)
+                self.allPlanets.append(contentsOf: planets)
             }
         }
     }
     
+    @IBAction func favoritePressed(_ sender: Any) {
+        if favoritePressed {
+            planets = DataPersistanceModel.getPlanets()
+            tableViewTitle.text = "Favorites"
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+            favoritePressed = false
+        } else {
+            planets = allPlanets
+            favoritePressed = true
+            tableViewTitle.text = "Planets"
+            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+        }
+    }
     
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)

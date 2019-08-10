@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanetListViewController" customModule="StarWarsProject" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteButton" destination="b2v-XO-CRR" id="WvZ-qY-bUQ"/>
                 <outlet property="planetsTableView" destination="5sw-Zv-3vC" id="LfQ-gy-5Ma"/>
+                <outlet property="tableViewTitle" destination="gY6-Kn-uYD" id="GGW-Tc-h42"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,12 +38,25 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2v-XO-CRR">
+                            <rect key="frame" x="354" y="14.5" width="40" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="b2v-XO-CRR" secondAttribute="height" multiplier="23:15" id="Zhx-0U-DMa"/>
+                                <constraint firstAttribute="width" constant="40" id="q6r-hC-79W"/>
+                            </constraints>
+                            <state key="normal" image="favoriteEmpty"/>
+                            <connections>
+                                <action selector="favoritePressed:" destination="-1" eventType="touchUpInside" id="xw8-Kz-Z16"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="gY6-Kn-uYD" firstAttribute="height" secondItem="XcC-ai-z8M" secondAttribute="height" id="9WY-Ta-Pcd"/>
+                        <constraint firstAttribute="trailing" secondItem="b2v-XO-CRR" secondAttribute="trailing" constant="20" id="Amu-IM-hMv"/>
                         <constraint firstItem="gY6-Kn-uYD" firstAttribute="centerX" secondItem="XcC-ai-z8M" secondAttribute="centerX" id="Ixt-4u-NvP"/>
                         <constraint firstItem="gY6-Kn-uYD" firstAttribute="width" secondItem="XcC-ai-z8M" secondAttribute="width" id="SBw-or-OgD"/>
+                        <constraint firstItem="b2v-XO-CRR" firstAttribute="centerY" secondItem="gY6-Kn-uYD" secondAttribute="centerY" id="bbb-BR-f4Z"/>
                         <constraint firstItem="gY6-Kn-uYD" firstAttribute="centerY" secondItem="XcC-ai-z8M" secondAttribute="centerY" id="de7-PE-Jao"/>
                         <constraint firstAttribute="height" constant="55" id="sfo-Fz-bIN"/>
                     </constraints>
@@ -82,6 +97,7 @@
     </objects>
     <resources>
         <image name="back" width="50" height="50"/>
+        <image name="favoriteEmpty" width="96" height="96"/>
         <image name="starWarLogoWhite" width="1388" height="838"/>
     </resources>
 </document>

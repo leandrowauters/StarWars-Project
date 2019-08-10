@@ -18,7 +18,7 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var hairColorView: RoundedView!
     @IBOutlet weak var eyeColorView: RoundedView!
     
-    let person: People.ResultPeopleWrapper!
+    let person: People.ResultWrapper!
     let colorHelper = ColorHelper()
     
     
@@ -48,7 +48,7 @@ class PeopleDetailViewController: UIViewController {
         }
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, person: People.ResultPeopleWrapper) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, person: People.ResultWrapper) {
         self.person = person
         super.init(nibName: nil, bundle: nil)
     }

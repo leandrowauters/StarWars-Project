@@ -15,7 +15,7 @@ class PeopleListViewController: UIViewController {
 
     
     let peopleClient = PeopleClient()
-    var people: [People.ResultPeopleWrapper] = [] {
+    var people: [People.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()

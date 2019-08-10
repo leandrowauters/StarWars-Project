@@ -11,10 +11,14 @@ import Foundation
 struct DataPersistanceModel {
     
     private static var planets = [Planet.ResultWrapper]()
-    private static let saveLocationFileName = "Planets.plist"
+    private static let planetsSaveLocationFileName = "Planets.plist"
+    private static var people = [People.ResultWrapper]()
+    private static let peopleSaveLocationFileName = "People.plist"
+
     
+    //Get planet from save dir
     static func getPlanets() -> [Planet.ResultWrapper]{
-        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: saveLocationFileName).path
+        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: planetsSaveLocationFileName).path
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path){
                 do {
@@ -24,24 +28,61 @@ struct DataPersistanceModel {
                 }
             }
         } else {
-            print("\(saveLocationFileName) does not exist")
+            print("\(planetsSaveLocationFileName) does not exist")
         }
         return planets
     }
     
-    static func addPlanet(planet: Planet){
+    static func addPlanet(planet: Planet.ResultWrapper){
         planets.append(planet)
-        saveManoUser()
+        savePlanet()
     }
     
-    static func deleteGame(manoUser: ManoUser, atIndex index: Int){
-        manoUsers.remove(at: index)
-        saveManoUser()
+    static func deletePlanet(planet: Planet.ResultWrapper){
+        planets.removeAll { (planetSaved) -> Bool in
+            planetSaved == planet
+        }
+        savePlanet()
     }
-    static func saveManoUser(){
-        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: saveLocationFileName)
+    static func savePlanet(){
+        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: planetsSaveLocationFileName)
         do{
-            let data = try PropertyListEncoder().encode(manoUsers)
+            let data = try PropertyListEncoder().encode(planets)
+            try data.write(to: path, options:  .atomic)
+        }catch{
+            print("Property list encoding error \(error)")
+        }
+    }
+    
+    static func getPeople() -> [People.ResultWrapper]{
+        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: peopleSaveLocationFileName).path
+        if FileManager.default.fileExists(atPath: path) {
+            if let data = FileManager.default.contents(atPath: path){
+                do {
+                    people = try PropertyListDecoder().decode([People.ResultWrapper].self, from: data)
+                }catch {
+                    print ("property list dedoding error:\(error)")
+                }
+            }
+        } else {
+            print("\(peopleSaveLocationFileName) does not exist")
+        }
+        return people
+    }
+    
+    static func addPerson(person: People.ResultWrapper){
+        people.append(person)
+        savePeople()
+    }
+    
+    static func deletePeople(person: People.ResultWrapper, atIndex index: Int){
+        people.remove(at: index)
+        savePeople()
+    }
+    static func savePeople(){
+        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: peopleSaveLocationFileName)
+        do{
+            let data = try PropertyListEncoder().encode(people)
             try data.write(to: path, options:  .atomic)
         }catch{
             print("Property list encoding error \(error)")

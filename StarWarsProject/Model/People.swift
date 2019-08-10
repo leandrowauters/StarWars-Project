@@ -9,7 +9,7 @@
 import Foundation
 
 struct People: Codable {
-    struct ResultPeopleWrapper: Codable {
+    struct ResultWrapper: Codable {
         let name: String
         let hairColor: String
         let eyeColor: String
@@ -28,7 +28,7 @@ struct People: Codable {
             case mass
         }
     }
-    let results: [ResultPeopleWrapper]
+    let results: [ResultWrapper]
     
     
 }

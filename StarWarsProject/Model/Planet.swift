@@ -9,7 +9,7 @@
 import Foundation
 
 struct Planet: Codable {
-    struct ResultWrapper: Codable {
+    struct ResultWrapper: Codable, Equatable {
         let name: String
         let climate: String
         let population: String

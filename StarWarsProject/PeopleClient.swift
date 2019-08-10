@@ -12,7 +12,7 @@ class PeopleClient {
     
     var currentPage = 1
     
-    public func fetchPeople(completionHandler: @escaping(AppError?, [People.ResultPeopleWrapper]?) -> Void) {
+    public func fetchPeople(completionHandler: @escaping(AppError?, [People.ResultWrapper]?) -> Void) {
         let endpointUrl = "https://swapi.co/api/people/?page=\(currentPage)"
         print(endpointUrl)
         currentPage += 1

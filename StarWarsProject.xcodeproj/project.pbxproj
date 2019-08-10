@@ -35,6 +35,7 @@
 		D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */; };
 		D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */; };
 		D5FCCAAD22FF7DCA002D5502 /* DataPersistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */; };
+		D5FCCAB022FF807E002D5502 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetClient.swift; path = ../PlanetClient.swift; sourceTree = "<group>"; };
 		D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceModel.swift; sourceTree = "<group>"; };
+		D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D559272B22FE107300369B33 /* String+Extention.swift */,
+				D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
 				D559272C22FE107300369B33 /* String+Extention.swift in Sources */,
+				D5FCCAB022FF807E002D5502 /* ViewController+Alert.swift in Sources */,
 				D5E8FB5222FDDCA5002E4CF2 /* Planet.swift in Sources */,
 				D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */,
 			);
