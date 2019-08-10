@@ -16,6 +16,7 @@
 		D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */; };
 		D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */; };
 		D559272822FE0B4C00369B33 /* PeopleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */; };
+		D559272C22FE107300369B33 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272B22FE107300369B33 /* String+Extention.swift */; };
 		D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */; };
 		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
 		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
@@ -42,6 +43,7 @@
 		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
 		D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
 		D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
+		D559272B22FE107300369B33 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extention.swift"; path = "../String+Extention.swift"; sourceTree = "<group>"; };
 		D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D54D0CFA22FDCB5E0035AD25 /* Utilities */,
 				D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */,
 				D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */,
+				D559272B22FE107300369B33 /* String+Extention.swift */,
 			);
 			path = StarWarsProject;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				D5E8FB4C22FDD564002E4CF2 /* ListCell.swift in Sources */,
 				D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
+				D559272C22FE107300369B33 /* String+Extention.swift in Sources */,
 				D5E8FB5222FDDCA5002E4CF2 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

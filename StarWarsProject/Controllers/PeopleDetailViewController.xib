@@ -14,7 +14,9 @@
                 <outlet property="birthYearLabel" destination="FnI-lI-9Zt" id="44T-0O-IRL"/>
                 <outlet property="dateCreatedLabel" destination="zAt-un-QDi" id="4Vc-Ez-DJ2"/>
                 <outlet property="eyeColorLabel" destination="x5S-7I-G57" id="TqT-56-Yan"/>
+                <outlet property="eyeColorView" destination="a4j-eu-aNU" id="lIa-U0-7li"/>
                 <outlet property="hairColorLabel" destination="Muk-Ii-eM8" id="V08-pn-iex"/>
+                <outlet property="hairColorView" destination="V73-QB-G9v" id="3Da-wL-5ku"/>
                 <outlet property="nameLabel" destination="E3w-ew-Q8X" id="fVG-dw-yd3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWarLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Fka-hM-TqQ">
-                    <rect key="frame" x="0.0" y="69" width="414.00000000000023" height="135"/>
+                    <rect key="frame" x="0.0" y="69" width="414" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="bhg-q3-OOC"/>
                     </constraints>

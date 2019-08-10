@@ -22,15 +22,16 @@ class PeopleListViewController: UIViewController {
             }
         }
     }
+    var hairColor = [String]()
     @IBOutlet weak var peopleTableView: UITableView!
 
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         fetchPeople()
+        
     }
 
     private func fetchPeople() {
@@ -82,7 +83,15 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
 
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let personSelected = people[indexPath.row]
+        let peopleDetailVc = PeopleDetailViewController(nibName: nil, bundle: nil, person: personSelected)
+        navigationController?.pushViewController(peopleDetailVc, animated: true)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
 }
+
+
