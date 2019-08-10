@@ -68,6 +68,7 @@ extension PlanetListViewController: UITableViewDelegate, UITableViewDataSource, 
         let planet = planets[indexPath.row]
         cell.nameLabel.text = planet.name
         cell.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -79,7 +80,9 @@ extension PlanetListViewController: UITableViewDelegate, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+       let selectedPlanet = planets[indexPath.row]
+        let planetDetailVC = PlanetsDetailViewController(nibName: nil, bundle: nil, planet: selectedPlanet)
+        navigationController?.pushViewController(planetDetailVC, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110

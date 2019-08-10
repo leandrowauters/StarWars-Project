@@ -14,6 +14,15 @@ struct Planet: Codable {
         let climate: String
         let population: String
         let created: String
+        let diameter: String
+        let surfaceWater: String
+        let terrain: String
+        let gravity: String
+        
+        private enum CodingKeys: String, CodingKey {
+            case name, climate, population, created, diameter,terrain,gravity
+            case surfaceWater = "surface_water"
+        }
     }
     
     let results: [ResultWrapper]
