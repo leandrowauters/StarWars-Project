@@ -55,4 +55,11 @@ class PlanetsBorderView: UIView {
     }
 }
 
+class ClimateBorderedView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = 30
+        clipsToBounds = true
+    }
+}
 

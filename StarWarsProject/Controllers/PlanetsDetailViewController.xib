@@ -185,8 +185,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                             <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-hd-NFc" customClass="ClimateBorderedView" customModule="StarWarsProject" customModuleProvider="target">
+                            <rect key="frame" x="114" y="19" width="186" height="87.5"/>
+                            <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="0.50516374143835618" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-Jc-OJq">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                            <rect key="frame" x="114" y="19" width="186" height="87.5"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -195,14 +199,18 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="jhZ-DT-gpw" firstAttribute="centerY" secondItem="mjI-zQ-Nd8" secondAttribute="centerY" id="28k-qH-1ye"/>
+                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="width" secondItem="xgr-hd-NFc" secondAttribute="width" id="5AR-PI-8vY"/>
                         <constraint firstItem="jhZ-DT-gpw" firstAttribute="centerX" secondItem="mjI-zQ-Nd8" secondAttribute="centerX" id="6bZ-6l-bD6"/>
-                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="width" secondItem="jhZ-DT-gpw" secondAttribute="width" id="Dn8-DV-v9J"/>
+                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="centerY" secondItem="xgr-hd-NFc" secondAttribute="centerY" id="7nt-VB-gnn"/>
                         <constraint firstItem="jhZ-DT-gpw" firstAttribute="height" secondItem="mjI-zQ-Nd8" secondAttribute="height" id="ODd-HM-zOn"/>
                         <constraint firstAttribute="height" constant="125" id="Ow2-8C-jJf"/>
                         <constraint firstItem="jhZ-DT-gpw" firstAttribute="width" secondItem="mjI-zQ-Nd8" secondAttribute="width" id="PLc-6f-LWS"/>
-                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="centerX" secondItem="jhZ-DT-gpw" secondAttribute="centerX" id="UrO-bh-E6C"/>
-                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="centerY" secondItem="jhZ-DT-gpw" secondAttribute="centerY" id="bnT-jt-GPw"/>
-                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="height" secondItem="jhZ-DT-gpw" secondAttribute="height" id="giM-XW-Rhj"/>
+                        <constraint firstItem="xgr-hd-NFc" firstAttribute="height" secondItem="jhZ-DT-gpw" secondAttribute="height" multiplier="0.7" id="a1G-IR-acs"/>
+                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="height" secondItem="xgr-hd-NFc" secondAttribute="height" id="btF-iY-1ug"/>
+                        <constraint firstItem="qQt-Jc-OJq" firstAttribute="centerX" secondItem="xgr-hd-NFc" secondAttribute="centerX" id="h4r-kf-qQF"/>
+                        <constraint firstItem="xgr-hd-NFc" firstAttribute="centerX" secondItem="jhZ-DT-gpw" secondAttribute="centerX" id="ieQ-9h-nNP"/>
+                        <constraint firstItem="xgr-hd-NFc" firstAttribute="centerY" secondItem="jhZ-DT-gpw" secondAttribute="centerY" id="mHp-fC-w3d"/>
+                        <constraint firstItem="xgr-hd-NFc" firstAttribute="width" secondItem="jhZ-DT-gpw" secondAttribute="width" multiplier="0.45" id="rYP-yB-3Z2"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jd-vS-DiZ">

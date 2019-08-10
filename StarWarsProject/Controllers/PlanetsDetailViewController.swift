@@ -35,7 +35,7 @@ class PlanetsDetailViewController: UIViewController {
         diameterLabel.text = "Diameter:\n\(planet.diameter)"
         gravityLabel.text = "Gravity:\n\(planet.gravity)"
         populationLabel.text = "Population:\n\(planet.population)"
-        climateLabel.text = "Climate:\n\(planet.climate)"
+        climateLabel.text = "Climate:\n\(planet.climate.capitalized)"
         dateCreatedLabel.text = "Date Created:\n\(planet.created.changeDateFormat(dateFormat: "MMM d, yyyy"))"
     }
     

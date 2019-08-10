@@ -33,6 +33,8 @@
 		D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */; };
 		D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */; };
 		D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */; };
+		D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */; };
+		D5FCCAAD22FF7DCA002D5502 /* DataPersistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,7 @@
 		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
 		D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
 		D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
-		D559272B22FE107300369B33 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extention.swift"; path = "../String+Extention.swift"; sourceTree = "<group>"; };
+		D559272B22FE107300369B33 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		D559272F22FE5A0D00369B33 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDetailViewController.swift; sourceTree = "<group>"; };
 		D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsDetailViewController.xib; sourceTree = "<group>"; };
@@ -62,8 +64,10 @@
 		D5E8FB5322FDDCAE002E4CF2 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
-		D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleClient.swift; sourceTree = "<group>"; };
-		D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetClient.swift; sourceTree = "<group>"; };
+		D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeopleClient.swift; path = ../PeopleClient.swift; sourceTree = "<group>"; };
+		D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetClient.swift; path = ../PlanetClient.swift; sourceTree = "<group>"; };
+		D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
+		D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +107,10 @@
 				D54D0CF622FDCA320035AD25 /* Controllers */,
 				D5E8FB4E22FDD661002E4CF2 /* Cell */,
 				D54D0CFA22FDCB5E0035AD25 /* Utilities */,
-				D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */,
-				D559519022FF4B0200B6D583 /* ImageHelper.swift */,
-				D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */,
-				D559272B22FE107300369B33 /* String+Extention.swift */,
-				D559272F22FE5A0D00369B33 /* ColorHelper.swift */,
+				D559519222FF7CBB00B6D583 /* Clients */,
+				D5FCCAA822FF7CFF002D5502 /* Color+Image+Helper */,
+				D5FCCAA922FF7D1C002D5502 /* Extention */,
+				D5FCCAAE22FF7DCF002D5502 /* DataPersistanceHelper */,
 			);
 			path = StarWarsProject;
 			sourceTree = "<group>";
@@ -149,6 +152,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D559519222FF7CBB00B6D583 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */,
+				D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
 		D5E8FB4E22FDD661002E4CF2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,32 @@
 				D5E8FB5322FDDCAE002E4CF2 /* People.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D5FCCAA822FF7CFF002D5502 /* Color+Image+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D559519022FF4B0200B6D583 /* ImageHelper.swift */,
+				D559272F22FE5A0D00369B33 /* ColorHelper.swift */,
+			);
+			path = "Color+Image+Helper";
+			sourceTree = "<group>";
+		};
+		D5FCCAA922FF7D1C002D5502 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				D559272B22FE107300369B33 /* String+Extention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		D5FCCAAE22FF7DCF002D5502 /* DataPersistanceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */,
+				D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */,
+			);
+			path = DataPersistanceHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +283,14 @@
 			files = (
 				D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */,
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
+				D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */,
 				D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */,
 				D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */,
 				D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
 				D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,
+				D5FCCAAD22FF7DCA002D5502 /* DataPersistanceModel.swift in Sources */,
 				D559273022FE5A0D00369B33 /* ColorHelper.swift in Sources */,
 				D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */,
 				D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */,
