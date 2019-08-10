@@ -30,14 +30,11 @@ class PeopleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchPeople {
-            return
-        }
+        fetchPeople()
         
     }
 
-    private func fetchPeople(done:() -> Void
-        ) {
+    private func fetchPeople() {
         peopleClient.fetchPeople { (appError, people) in
             if let appError = appError {
                 print(appError.errorMessage())
@@ -59,8 +56,9 @@ class PeopleListViewController: UIViewController {
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)
     }
-    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+    func isLoadingCell(for indexPath: IndexPath) -> Bool { // is it the last cell?
         return indexPath.row >= people.count - 1
+        // If so load more data
     }
 }
 
@@ -75,7 +73,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as? ListCell else {
             return UITableViewCell()
         }
-        let person = people[indexPath.row]
+        let person = people[indexPath.row] // Current Person
         cell.nameLabel.text = person.name
         cell.selectionStyle = .none
         cell.backgroundColor = #colorLiteral(red: 0.0005744225346, green: 0.1626783907, blue: 0.2327522039, alpha: 1)
@@ -85,15 +83,13 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         if indexPaths.contains(where: isLoadingCell) {
-            fetchPeople {
-                <#code#>
-            }
+            fetchPeople() // ONLY Fetch if is the last cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let personSelected = people[indexPath.row]
-        let peopleDetailVc = PeopleDetailViewController(nibName: nil, bundle: nil, person: personSelected)
+        let peopleDetailVc = PeopleDetailViewController(nibName: nil, bundle: nil, person: personSelected) // INIT PEOPLE VC TO TAKE THE SELECTED PERSON
         navigationController?.pushViewController(peopleDetailVc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

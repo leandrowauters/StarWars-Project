@@ -47,3 +47,12 @@ class RoundedView: UIView {
         clipsToBounds = true
     }
 }
+
+class PlanetsBorderView: UIView {
+    override func layoutSubviews() {
+        layer.borderWidth = 2
+        layer.borderColor = #colorLiteral(red: 0.0005744225346, green: 0.1626783907, blue: 0.2327522039, alpha: 1)
+    }
+}
+
+

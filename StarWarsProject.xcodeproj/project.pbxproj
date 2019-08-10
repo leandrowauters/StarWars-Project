@@ -18,6 +18,8 @@
 		D559272822FE0B4C00369B33 /* PeopleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */; };
 		D559272C22FE107300369B33 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272B22FE107300369B33 /* String+Extention.swift */; };
 		D559273022FE5A0D00369B33 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272F22FE5A0D00369B33 /* ColorHelper.swift */; };
+		D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */; };
+		D559518F22FF2E3C00B6D583 /* PlanetsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */; };
 		D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */; };
 		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
 		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
@@ -46,6 +48,8 @@
 		D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
 		D559272B22FE107300369B33 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extention.swift"; path = "../String+Extention.swift"; sourceTree = "<group>"; };
 		D559272F22FE5A0D00369B33 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDetailViewController.swift; sourceTree = "<group>"; };
+		D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsDetailViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */,
 				D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */,
 				D5E8FB4722FDD0A8002E4CF2 /* PlanetListViewController.xib */,
+				D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */,
+				D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */,
 				D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */,
 				D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */,
 			);
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E8FB4922FDD0A8002E4CF2 /* PlanetListViewController.xib in Resources */,
+				D559518F22FF2E3C00B6D583 /* PlanetsDetailViewController.xib in Resources */,
 				D5E8FB4D22FDD564002E4CF2 /* ListCell.xib in Resources */,
 				D54D0CEB22FDBA160035AD25 /* LaunchScreen.storyboard in Resources */,
 				D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */,
@@ -249,6 +256,7 @@
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
 				D559272C22FE107300369B33 /* String+Extention.swift in Sources */,
 				D5E8FB5222FDDCA5002E4CF2 /* Planet.swift in Sources */,
+				D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
