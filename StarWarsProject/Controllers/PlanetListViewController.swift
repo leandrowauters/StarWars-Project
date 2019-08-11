@@ -99,7 +99,7 @@ extension PlanetListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let selectedPlanet = planets[indexPath.row]
-        let planetDetailVC = PlanetsDetailViewController(nibName: nil, bundle: nil, planet: selectedPlanet)
+        let planetDetailVC = PlanetsDetailViewController(nibName: nil, bundle: nil, planet: selectedPlanet, allPlanets: allPlanets)
         navigationController?.pushViewController(planetDetailVC, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

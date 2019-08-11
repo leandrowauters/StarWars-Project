@@ -11,7 +11,6 @@ import UIKit
 class PlanetsDetailViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
-
     @IBOutlet weak var diameterLabel: UILabel!
     @IBOutlet weak var gravityLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
@@ -21,8 +20,14 @@ class PlanetsDetailViewController: UIViewController {
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var planet: Planet.ResultWrapper!
+    var planet: Planet.ResultWrapper! {
+        didSet {
+            setup()
+        }
+    }
+    var planetClient = PlanetClient()
     var savedPlanets = [Planet.ResultWrapper]()
+    var allPlanets = [Planet.ResultWrapper]()
     let imageHelper = ImageHelper()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,10 @@ class PlanetsDetailViewController: UIViewController {
         dateCreatedLabel.text = "Date Created:\n\(planet.created.changeDateFormat(dateFormat: "MMM d, yyyy"))"
     }
     
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        planet = allPlanets.randomElement()
+    }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -59,8 +68,9 @@ class PlanetsDetailViewController: UIViewController {
             favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, planet: Planet.ResultWrapper) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, planet: Planet.ResultWrapper, allPlanets: [Planet.ResultWrapper]) {
         self.planet = planet
+        self.allPlanets = allPlanets
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,3 +79,4 @@ class PlanetsDetailViewController: UIViewController {
     }
     
 }
+
