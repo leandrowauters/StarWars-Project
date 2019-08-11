@@ -31,10 +31,10 @@
 		D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5322FDDCAE002E4CF2 /* People.swift */; };
 		D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */; };
 		D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */; };
-		D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */; };
+		D5E8FB5B22FDE902002E4CF2 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5A22FDE902002E4CF2 /* NetworkClient.swift */; };
 		D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */; };
 		D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */; };
-		D5FCCAAD22FF7DCA002D5502 /* DataPersistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */; };
+		D5FCCAAD22FF7DCA002D5502 /* DataPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAC22FF7DCA002D5502 /* DataPersistenceModel.swift */; };
 		D5FCCAB022FF807E002D5502 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +65,10 @@
 		D5E8FB5322FDDCAE002E4CF2 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
-		D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeopleClient.swift; path = ../PeopleClient.swift; sourceTree = "<group>"; };
+		D5E8FB5A22FDE902002E4CF2 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = ../NetworkClient.swift; sourceTree = "<group>"; };
 		D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetClient.swift; path = ../PlanetClient.swift; sourceTree = "<group>"; };
 		D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
-		D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceModel.swift; sourceTree = "<group>"; };
+		D5FCCAAC22FF7DCA002D5502 /* DataPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceModel.swift; sourceTree = "<group>"; };
 		D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 		D559519222FF7CBB00B6D583 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				D5E8FB5A22FDE902002E4CF2 /* PeopleClient.swift */,
+				D5E8FB5A22FDE902002E4CF2 /* NetworkClient.swift */,
 				D5E8FB5C22FDFE0A002E4CF2 /* PlanetClient.swift */,
 			);
 			path = Clients;
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */,
-				D5FCCAAC22FF7DCA002D5502 /* DataPersistanceModel.swift */,
+				D5FCCAAC22FF7DCA002D5502 /* DataPersistenceModel.swift */,
 			);
 			path = DataPersistanceHelper;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 				D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */,
 				D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
-				D5E8FB5B22FDE902002E4CF2 /* PeopleClient.swift in Sources */,
+				D5E8FB5B22FDE902002E4CF2 /* NetworkClient.swift in Sources */,
 				D54D0CE622FDBA120035AD25 /* StarWarsProject.xcdatamodeld in Sources */,
-				D5FCCAAD22FF7DCA002D5502 /* DataPersistanceModel.swift in Sources */,
+				D5FCCAAD22FF7DCA002D5502 /* DataPersistenceModel.swift in Sources */,
 				D559273022FE5A0D00369B33 /* ColorHelper.swift in Sources */,
 				D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */,
 				D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */,

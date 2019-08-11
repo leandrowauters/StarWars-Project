@@ -18,7 +18,7 @@ class PeopleListViewController: UIViewController {
     
     var favoritePressed = true
     
-    let peopleClient = PeopleClient()
+    let networkClient = NetworkClient()
     var allPeople = [People.ResultWrapper]()
     var people: [People.ResultWrapper] = [] {
         didSet {
@@ -40,13 +40,15 @@ class PeopleListViewController: UIViewController {
     }
 
     private func fetchPeople() {
-        peopleClient.fetchPeople { (appError, people) in
-            if let appError = appError {
-                print(appError.errorMessage())
-            }
-            if let people = people {
-                self.people.append(contentsOf: people)
-                self.allPeople.append(contentsOf: people)
+        networkClient.fetchData(resource: .People) { (peopleResult, planetResult) in
+            if let peopleResult = peopleResult {
+                switch peopleResult {
+                case .failure(let error):
+                    print("error: \(error)")
+                case .success(let people):
+                    self.people.append(contentsOf: people)
+                    self.allPeople.append(contentsOf: people)
+                }
             }
         }
     }
@@ -60,7 +62,7 @@ class PeopleListViewController: UIViewController {
 
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if favoritePressed {
-            people = DataPersistanceModel.getPeople()
+            people = DataPersistenceModel.getPeople()
             tableViewTitle.text = "Favorites"
             favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
             favoritePressed = false

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataPersistanceModel {
+struct DataPersistenceModel {
     
     private static var planets = [Planet.ResultWrapper]()
     private static let planetsSaveLocationFileName = "Planets.plist"

@@ -14,7 +14,7 @@ class PlanetListViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var tableViewTitle: UILabel!
     
-    let planetClient = PlanetClient()
+    let networkClient = NetworkClient()
     var favoritePressed = true
     var allPlanets = [Planet.ResultWrapper]()
     var planets: [Planet.ResultWrapper] = [] {
@@ -40,28 +40,45 @@ class PlanetListViewController: UIViewController {
         planetsTableView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
     }
     private func fetchPlanets() {
-        planetClient.fetchPlanets { (appError, planets) in
-            if let appError = appError {
-                print(appError.errorMessage())
-            }
-            if let planets = planets {
-                self.planets.append(contentsOf: planets)
-                self.allPlanets.append(contentsOf: planets)
+        networkClient.fetchData(resource: .Planet) { (peopleResult, planetResult) in
+            if let planetResult = planetResult {
+                switch planetResult {
+                case .failure(let error):
+                    print("error: \(error)")
+                case .success(let planets):
+                    self.planets.append(contentsOf: planets)
+                    self.allPlanets.append(contentsOf: planets)
+                }
             }
         }
     }
     
     @IBAction func favoritePressed(_ sender: Any) {
         if favoritePressed {
-            planets = DataPersistanceModel.getPlanets()
-            tableViewTitle.text = "Favorites"
-            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-            favoritePressed = false
+            UIView.animate(withDuration: 0.3, animations: {
+                self.planetsTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.planets = DataPersistenceModel.getPlanets()
+                    self?.tableViewTitle.text = "Favorites"
+                    self?.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+                    self?.favoritePressed = false
+                    self?.planetsTableView.frame.origin.x -= self!.view.bounds.width
+                })
+            }
         } else {
-            planets = allPlanets
-            favoritePressed = true
-            tableViewTitle.text = "Planets"
-            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+            UIView.animate(withDuration: 0.3, animations: {
+               self.planetsTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done  in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.planets = self!.allPlanets
+                    self?.favoritePressed = true
+                    self?.tableViewTitle.text = "Planets"
+                    self?.favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+                    self?.planetsTableView.frame.origin.x -= self!.view.bounds.width
+                })
+            }
+
         }
     }
     

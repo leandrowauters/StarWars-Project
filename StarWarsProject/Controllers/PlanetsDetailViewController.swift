@@ -31,7 +31,7 @@ class PlanetsDetailViewController: UIViewController {
     let imageHelper = ImageHelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        savedPlanets = DataPersistanceModel.getPlanets()
+        savedPlanets = DataPersistenceModel.getPlanets()
         setup()
         
     }
@@ -59,12 +59,12 @@ class PlanetsDetailViewController: UIViewController {
     }
     
     @IBAction func favoritePressed(_ sender: UIButton) {
-        let savedPlanets = DataPersistanceModel.getPlanets()
+        let savedPlanets = DataPersistenceModel.getPlanets()
         if savedPlanets.contains(planet) {
-            DataPersistanceModel.deletePlanet(planet: planet)
+            DataPersistenceModel.deletePlanet(planet: planet)
             favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
         } else {
-            DataPersistanceModel.addPlanet(planet: planet)
+            DataPersistenceModel.addPlanet(planet: planet)
             favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }

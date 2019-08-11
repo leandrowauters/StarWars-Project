@@ -13,7 +13,6 @@ class WelcomeScreeenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
 
     @IBAction func peopleButtonPressed(_ sender: UIButton) {
