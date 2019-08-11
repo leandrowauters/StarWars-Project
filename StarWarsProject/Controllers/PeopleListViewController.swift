@@ -13,17 +13,18 @@ enum SortByButtons: String {
 }
 class PeopleListViewController: UIViewController {
     @IBOutlet weak var tableViewTitle: UILabel!
-
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var favoritePressed = true
-    
     let networkClient = NetworkClient()
     var allPeople = [People.ResultWrapper]()
     var people: [People.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -36,7 +37,6 @@ class PeopleListViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         fetchPeople()
-        
     }
 
     private func fetchPeople() {
@@ -62,15 +62,31 @@ class PeopleListViewController: UIViewController {
 
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if favoritePressed {
-            people = DataPersistenceModel.getPeople()
-            tableViewTitle.text = "Favorites"
-            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-            favoritePressed = false
+            UIView.animate(withDuration: 0.3, animations: {
+                self.peopleTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.people = DataPersistenceModel.getPeople()
+                    self?.tableViewTitle.text = "Favorites"
+                    self?.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+                    self?.favoritePressed = false
+                    self?.peopleTableView.frame.origin.x -= self!.view.bounds.width
+                })
+            }
         } else {
-            people = allPeople
-            favoritePressed = true
-            tableViewTitle.text = "Planets"
-            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.peopleTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.people = self!.allPeople
+                    self?.favoritePressed = true
+                    self?.tableViewTitle.text = "People"
+                    self?.favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+                    self?.peopleTableView.frame.origin.x -= self!.view.bounds.width
+                })
+
+            }
+
         }
     }
     

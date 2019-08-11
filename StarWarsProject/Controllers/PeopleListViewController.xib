@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeopleListViewController" customModule="StarWarsProject" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="l2h-m6-qwT" id="XNT-VA-Jgq"/>
                 <outlet property="favoriteButton" destination="zep-eS-3KZ" id="rCf-bW-Vmb"/>
                 <outlet property="peopleTableView" destination="pf5-it-S1c" id="A3O-n4-DSq"/>
                 <outlet property="tableViewTitle" destination="Dhw-10-c9k" id="3Po-oK-dTS"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starWarLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-sW-Qj5">
-                    <rect key="frame" x="0.0" y="69" width="414.00000000000023" height="135"/>
+                    <rect key="frame" x="0.0" y="69" width="414" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="Oqi-o7-fbH"/>
                     </constraints>
@@ -62,7 +63,7 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pf5-it-S1c">
                     <rect key="frame" x="0.0" y="259" width="414" height="603"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-x3-FJi">
                     <rect key="frame" x="20" y="64" width="50" height="50"/>
@@ -77,7 +78,6 @@
                 </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="l2h-m6-qwT">
                     <rect key="frame" x="0.0" y="259" width="414" height="603"/>
-                    <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.00057442253455519676" green="0.16267839074134827" blue="0.23275220394134521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,6 +13,7 @@ class PlanetListViewController: UIViewController {
     @IBOutlet weak var planetsTableView: UITableView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var tableViewTitle: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let networkClient = NetworkClient()
     var favoritePressed = true
@@ -21,6 +22,7 @@ class PlanetListViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.planetsTableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
