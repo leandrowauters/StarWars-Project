@@ -9,7 +9,7 @@
 import Foundation
 
 struct People: Codable {
-    struct ResultWrapper: Codable {
+    struct ResultWrapper: Codable, Equatable {
         let name: String
         let hairColor: String
         let eyeColor: String

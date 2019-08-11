@@ -12,9 +12,14 @@ enum SortByButtons: String {
     case Name, Height, Weight
 }
 class PeopleListViewController: UIViewController {
+    @IBOutlet weak var tableViewTitle: UILabel!
 
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    var favoritePressed = true
     
     let peopleClient = PeopleClient()
+    var allPeople = [People.ResultWrapper]()
     var people: [People.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -41,6 +46,7 @@ class PeopleListViewController: UIViewController {
             }
             if let people = people {
                 self.people.append(contentsOf: people)
+                self.allPeople.append(contentsOf: people)
             }
         }
     }
@@ -52,6 +58,19 @@ class PeopleListViewController: UIViewController {
         peopleTableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
     }
 
+    @IBAction func favoriteButtonPressed(_ sender: Any) {
+        if favoritePressed {
+            people = DataPersistanceModel.getPeople()
+            tableViewTitle.text = "Favorites"
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+            favoritePressed = false
+        } else {
+            people = allPeople
+            favoritePressed = true
+            tableViewTitle.text = "Planets"
+            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+        }
+    }
     
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)

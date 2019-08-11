@@ -39,10 +39,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2v-XO-CRR">
-                            <rect key="frame" x="354" y="14.5" width="40" height="26"/>
+                            <rect key="frame" x="349" y="5" width="45" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="b2v-XO-CRR" secondAttribute="height" multiplier="23:15" id="Zhx-0U-DMa"/>
-                                <constraint firstAttribute="width" constant="40" id="q6r-hC-79W"/>
+                                <constraint firstAttribute="width" secondItem="b2v-XO-CRR" secondAttribute="height" multiplier="1:1" id="Zhx-0U-DMa"/>
+                                <constraint firstAttribute="width" constant="45" id="q6r-hC-79W"/>
                             </constraints>
                             <state key="normal" image="favoriteEmpty"/>
                             <connections>

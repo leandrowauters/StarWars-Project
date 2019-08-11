@@ -15,6 +15,7 @@
                 <outlet property="dateCreatedLabel" destination="zAt-un-QDi" id="4Vc-Ez-DJ2"/>
                 <outlet property="eyeColorLabel" destination="x5S-7I-G57" id="TqT-56-Yan"/>
                 <outlet property="eyeColorView" destination="a4j-eu-aNU" id="lIa-U0-7li"/>
+                <outlet property="favoriteButton" destination="GMH-u1-bCm" id="pa6-oB-Txc"/>
                 <outlet property="hairColorLabel" destination="Muk-Ii-eM8" id="V08-pn-iex"/>
                 <outlet property="hairColorView" destination="V73-QB-G9v" id="3Da-wL-5ku"/>
                 <outlet property="nameLabel" destination="E3w-ew-Q8X" id="fVG-dw-yd3"/>
@@ -52,11 +53,24 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMH-u1-bCm">
+                            <rect key="frame" x="345" y="5.5" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="GMH-u1-bCm" secondAttribute="height" multiplier="1:1" id="gnf-Kp-lWo"/>
+                                <constraint firstAttribute="width" constant="44" id="iby-e5-ZNY"/>
+                            </constraints>
+                            <state key="normal" image="favoriteEmpty"/>
+                            <connections>
+                                <action selector="favoritePressed:" destination="-1" eventType="touchUpInside" id="duh-jF-HNC"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="E3w-ew-Q8X" firstAttribute="centerX" secondItem="BKw-Mk-N3D" secondAttribute="centerX" id="Hjh-h4-Jgz"/>
+                        <constraint firstItem="GMH-u1-bCm" firstAttribute="centerY" secondItem="E3w-ew-Q8X" secondAttribute="centerY" id="I8P-cr-H1p"/>
                         <constraint firstItem="E3w-ew-Q8X" firstAttribute="height" secondItem="BKw-Mk-N3D" secondAttribute="height" id="N9y-Pc-9Ju"/>
+                        <constraint firstAttribute="trailing" secondItem="GMH-u1-bCm" secondAttribute="trailing" constant="25" id="fWc-U5-Zdc"/>
                         <constraint firstItem="E3w-ew-Q8X" firstAttribute="centerY" secondItem="BKw-Mk-N3D" secondAttribute="centerY" id="iGD-1w-HvF"/>
                         <constraint firstAttribute="height" constant="55" id="lVh-p6-BCQ"/>
                         <constraint firstItem="E3w-ew-Q8X" firstAttribute="width" secondItem="BKw-Mk-N3D" secondAttribute="width" id="qlf-40-AkH"/>
@@ -138,6 +152,7 @@
     </objects>
     <resources>
         <image name="back" width="50" height="50"/>
+        <image name="favoriteEmpty" width="96" height="96"/>
         <image name="starWarLogoWhite" width="1388" height="838"/>
     </resources>
 </document>

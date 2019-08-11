@@ -17,15 +17,17 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var hairColorView: RoundedView!
     @IBOutlet weak var eyeColorView: RoundedView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     let person: People.ResultWrapper!
     let colorHelper = ColorHelper()
-    
-    
+    var favoritePressed = true
+    var savedPeople = [People.ResultWrapper]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        savedPeople = DataPersistanceModel.getPeople()
         // Do any additional setup after loading the view.
     }
 
@@ -55,6 +57,16 @@ class PeopleDetailViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    @IBAction func favoritePressed(_ sender: Any) {
+        let savedPeople = DataPersistanceModel.getPeople()
+        if savedPeople.contains(person) {
+            DataPersistanceModel.deletePeople(person: person)
+            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+        } else {
+            DataPersistanceModel.addPerson(person: person)
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+        }
     }
     
     @IBAction func backWasPressed(_ sender: Any) {

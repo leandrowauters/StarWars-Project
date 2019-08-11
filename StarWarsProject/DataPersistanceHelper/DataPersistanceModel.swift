@@ -75,8 +75,10 @@ struct DataPersistanceModel {
         savePeople()
     }
     
-    static func deletePeople(person: People.ResultWrapper, atIndex index: Int){
-        people.remove(at: index)
+    static func deletePeople(person: People.ResultWrapper){
+        people.removeAll { (peopleSaved) -> Bool in
+            peopleSaved == person
+        }
         savePeople()
     }
     static func savePeople(){
