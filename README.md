@@ -5,8 +5,8 @@ Star Wars database app that displays every planet and character from the Star Wa
 ### Planet Library
 * An interactive table view that displays every planet from the Star Wars universe.
 * A detail view that display info on selected planet such as diameter, gravity, population, climate, etc.
-* Icons that represent different planet terrains such as desert, mountain, etc.
-* Different images for each climate for example artic, arid, temperate, tropical, etc
+* Icons that represent different terrains such as desert, mountain, etc.
+* Different images for each climate, for example artic, arid, temperate, tropical, etc
 
 ### People Library
 * An interactive table view that displays every character from the Star Wars universe.
