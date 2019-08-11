@@ -15,12 +15,12 @@ Star Wars database app that displays every planet and character from the Star Wa
 * Save your favorite planets or characters.
 * Shake your phone to select random planets or characters
 
-### Prerequisites
+## Prerequisites
 
 Xcode 10.2.1
 iPhone running  iOS 12
 
-### Installing
+## Installing
 
 No cocoapods
 Run simulator on Xcode
