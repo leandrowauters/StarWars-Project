@@ -16,9 +16,6 @@ Star Wars database app that displays every planet and character from the Star Wa
 * Shake your phone to select random planets or characters
 
 ## Images 
-![](WelcomeScreen.PNG)
-![](People.PNG)
-![](PlanetDetail.PNG)
 
 ## Prerequisites
 
