@@ -11,19 +11,19 @@ import UIKit
 struct ImageHelper {
     
     //IMAGES FOR TERRAIN
-    let valley = UIImage(named: "valley")!
-    let desert = UIImage(named: "desert")!
-    let lake = UIImage(named: "lake")!
-    let glacier = UIImage(named: "glacier")!
-    let cave = UIImage(named: "cave")!
-    let swamp = UIImage(named: "swamp")!
-    let grass = UIImage(named: "grass")!
-    let volcano = UIImage(named: "volcano")!
-    let forest = UIImage(named: "forest")!
-    let mountain = UIImage(named: "mountain")!
-    let sea = UIImage(named: "sea")!
-    let field = UIImage(named: "field")!
-    let city = UIImage(named: "city")!
+//    let valley = UIImage(named: "valley")!
+//    let desert = UIImage(named: "desert")!
+//    let lake = UIImage(named: "lake")!
+//    let glacier = UIImage(named: "glacier")!
+//    let cave = UIImage(named: "cave")!
+//    let swamp = UIImage(named: "swamp")!
+//    let grass = UIImage(named: "grass")!
+//    let volcano = UIImage(named: "volcano")!
+//    let forest = UIImage(named: "forest")!
+//    let mountain = UIImage(named: "mountain")!
+//    let sea = UIImage(named: "sea")!
+//    let field = UIImage(named: "field")!
+//    let city = UIImage(named: "city")!
     
     //IMAGES FOR CLIMATE
     let temperate = UIImage(named: "temperate")!
@@ -38,73 +38,45 @@ struct ImageHelper {
     
     
     //EVERY POSSIBLE TERRAIN SORTED BY CATEGORY
-    let cityTerrain = ["cityscape", "cities", " urban", "urban"]
-    let valleyTerrain = [" valleys", "grassy hills"]
-    let lakeTerrain = ["lakes"," lakes"]
-    let glacierTerrain = [" ice caves", "glaciers"," tundra","tundra"," cliffs","rocky islands"," glaciers"]
-    let caveTerrain = ["caves"]
-    let swampTerrain = [" savannas"," rainforests"," swamps", " savanna"," acid pools","swamp", "swamps","rainforests"," sinkholes"]
-    let grassTerrain = [" mesas", "verdant","grass","grasslands", " grasslands"]
-    let volcanoTerrain = [" lava rivers","volcanoes"," volcanoes"]
-    let forestTerrain = [" plateaus","forests","jungles","fungus forests"," jungles"," forests","barren","jungle"]
-    let mountainTerrain = [" mountain"," mesas"," mountains"," cliffs"," reefs","mountains"," canyons"," hills"," mountain ranges","rocky"]
-    let seaTerrain = [" seas"," oceans","ocean"," rivers"]
-    let desertTerrain = [" rocky deserts","deserts"]
-    let fieldTerrain = [" fields","verdant","grassy hills"," plateaus","plains"," vines"]
+    let cityTerrain: [[String] : UIImage] = [["cityscape", "cities", " urban", "urban"] : UIImage(named: "city")!]
+    let valleyTerrain: [[String] : UIImage] = [[" valleys", "grassy hills"] : UIImage(named: "valley")!]
+    let lakeTerrain: [[String] : UIImage] = [["lakes"," lakes"] : UIImage(named: "desert")!]
+    let glacierTerrain: [[String] : UIImage] = [[" ice caves", "glaciers"," tundra","tundra"," cliffs","rocky islands"," glaciers"] :UIImage(named: "glacier")!]
+    let caveTerrain: [[String] : UIImage] = [["caves"] : UIImage(named: "cave")! ]
+    let swampTerrain: [[String] : UIImage] = [[" savannas"," rainforests"," swamps", " savanna"," acid pools","swamp", "swamps","rainforests"," sinkholes"] : UIImage(named: "swamp")!]
+    let grassTerrain: [[String] : UIImage] = [[" mesas", "verdant","grass","grasslands", " grasslands"] : UIImage(named: "grass")!]
+    let volcanoTerrain: [[String] : UIImage] = [[" lava rivers","volcanoes"," volcanoes"] : UIImage(named: "volcano")!]
+    let forestTerrain: [[String] : UIImage] = [[" plateaus","forests","jungles","fungus forests"," jungles"," forests","barren","jungle"] : UIImage(named: "forest")!]
+    let mountainTerrain: [[String] : UIImage] = [[" mountain"," mesas"," mountains"," cliffs"," reefs","mountains"," canyons"," hills"," mountain ranges","rocky"] : UIImage(named: "mountain")!]
+    let seaTerrain: [[String] : UIImage] = [[" seas"," oceans","ocean"," rivers"] : UIImage(named: "sea")!]
+    let desertTerrain: [[String] : UIImage] = [[" rocky deserts","deserts"] : UIImage(named: "desert")!]
+    let fieldTerrain: [[String] : UIImage] = [[" fields","verdant","grassy hills"," plateaus","plains"," vines"] : UIImage(named: "field")!]
     
-    //EVERY POSSIBLE CLIMATE
+    
    
     
     //func that returns image based on terrain category
     public func getImageBasedOnTerrain(terrain: String) -> [UIImage] {
-        var imagesToReturn = [UIImage]()
+        let collectionOfTerrain = [cityTerrain,valleyTerrain,lakeTerrain,glacierTerrain,caveTerrain,swampTerrain,grassTerrain,volcanoTerrain,forestTerrain,mountainTerrain,seaTerrain,seaTerrain,desertTerrain,fieldTerrain]
+        var imagesToReturn = Set<UIImage>()
         let separetedTerrain = terrain.components(separatedBy: ",")
         for terrain in separetedTerrain {
             if imagesToReturn.count == 4 {
-                return imagesToReturn
+                return Array(imagesToReturn)
             }
-            if cityTerrain.contains(terrain) {
-                imagesToReturn.append(city)
-            }
-            if valleyTerrain.contains(terrain) {
-                imagesToReturn.append(valley)
-            }
-            if lakeTerrain.contains(terrain){
-                imagesToReturn.append(lake)
-            }
-            if glacierTerrain.contains(terrain) {
-                imagesToReturn.append(glacier)
-            }
-            if caveTerrain.contains(terrain) {
-                imagesToReturn.append(cave)
-            }
-            if swampTerrain.contains(terrain) {
-                imagesToReturn.append(swamp)
-            }
-            if grassTerrain.contains(terrain) {
-                imagesToReturn.append(grass)
-            }
-            if volcanoTerrain.contains(terrain) {
-                imagesToReturn.append(volcano)
-            }
-            if forestTerrain.contains(terrain) {
-                imagesToReturn.append(forest)
-            }
-            if mountainTerrain.contains(terrain) {
-                imagesToReturn.append(mountain)
-            }
-            if seaTerrain.contains(terrain) {
-                imagesToReturn.append(sea)
-            }
-            if desertTerrain.contains(terrain) {
-                imagesToReturn.append(desert)
-            }
-            if fieldTerrain.contains(terrain) {
-                imagesToReturn.append(field)
+            for typeOfTerrain in collectionOfTerrain {
+                for key in typeOfTerrain.keys {
+                    key.forEach { (terrainKey) in
+                        if terrain == terrainKey {
+                            
+                            imagesToReturn.insert(typeOfTerrain.values.first!)
+                        }
+                    }
+                }
             }
         }
         
-       return imagesToReturn
+       return Array(imagesToReturn)
     }
     
     public func getImageBasedOnClimate(climate: String) -> UIImage? {

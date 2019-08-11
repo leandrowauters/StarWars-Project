@@ -16,7 +16,7 @@
 		D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */; };
 		D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */; };
 		D559272822FE0B4C00369B33 /* PeopleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */; };
-		D559272C22FE107300369B33 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272B22FE107300369B33 /* String+Extention.swift */; };
+		D559272C22FE107300369B33 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272B22FE107300369B33 /* String+Extension.swift */; };
 		D559273022FE5A0D00369B33 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559272F22FE5A0D00369B33 /* ColorHelper.swift */; };
 		D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */; };
 		D559518F22FF2E3C00B6D583 /* PlanetsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */; };
@@ -50,7 +50,7 @@
 		D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IBDesignableViews.swift; path = ../IBDesignableViews.swift; sourceTree = "<group>"; };
 		D559272522FE0B4B00369B33 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
 		D559272622FE0B4C00369B33 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
-		D559272B22FE107300369B33 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		D559272B22FE107300369B33 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D559272F22FE5A0D00369B33 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDetailViewController.swift; sourceTree = "<group>"; };
 		D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsDetailViewController.xib; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				D54D0CFA22FDCB5E0035AD25 /* Utilities */,
 				D559519222FF7CBB00B6D583 /* Clients */,
 				D5FCCAA822FF7CFF002D5502 /* Color+Image+Helper */,
-				D5FCCAA922FF7D1C002D5502 /* Extention */,
+				D5FCCAA922FF7D1C002D5502 /* Extension */,
 				D5FCCAAE22FF7DCF002D5502 /* DataPersistanceHelper */,
 			);
 			path = StarWarsProject;
@@ -190,13 +190,13 @@
 			path = "Color+Image+Helper";
 			sourceTree = "<group>";
 		};
-		D5FCCAA922FF7D1C002D5502 /* Extention */ = {
+		D5FCCAA922FF7D1C002D5502 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D559272B22FE107300369B33 /* String+Extention.swift */,
+				D559272B22FE107300369B33 /* String+Extension.swift */,
 				D5FCCAAF22FF807E002D5502 /* ViewController+Alert.swift */,
 			);
-			path = Extention;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D5FCCAAE22FF7DCF002D5502 /* DataPersistanceHelper */ = {
@@ -301,7 +301,7 @@
 				D5E8FB4C22FDD564002E4CF2 /* ListCell.swift in Sources */,
 				D5E8FB5D22FDFE0A002E4CF2 /* PlanetClient.swift in Sources */,
 				D54D0CF422FDC5B60035AD25 /* WelcomeScreeenViewController.swift in Sources */,
-				D559272C22FE107300369B33 /* String+Extention.swift in Sources */,
+				D559272C22FE107300369B33 /* String+Extension.swift in Sources */,
 				D5FCCAB022FF807E002D5502 /* ViewController+Alert.swift in Sources */,
 				D5E8FB5222FDDCA5002E4CF2 /* Planet.swift in Sources */,
 				D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */,
