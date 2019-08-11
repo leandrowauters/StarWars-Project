@@ -10,31 +10,21 @@ import Foundation
 import UIKit
 struct ImageHelper {
     
-    //IMAGES FOR TERRAIN
-//    let valley = UIImage(named: "valley")!
-//    let desert = UIImage(named: "desert")!
-//    let lake = UIImage(named: "lake")!
-//    let glacier = UIImage(named: "glacier")!
-//    let cave = UIImage(named: "cave")!
-//    let swamp = UIImage(named: "swamp")!
-//    let grass = UIImage(named: "grass")!
-//    let volcano = UIImage(named: "volcano")!
-//    let forest = UIImage(named: "forest")!
-//    let mountain = UIImage(named: "mountain")!
-//    let sea = UIImage(named: "sea")!
-//    let field = UIImage(named: "field")!
-//    let city = UIImage(named: "city")!
+
+
+
+//    if climateToSet == "polluted" {
+//    return polluted
+//    }
+
     
     //IMAGES FOR CLIMATE
-    let temperate = UIImage(named: "temperate")!
-    let subartic = UIImage(named: "subartic")!
-    let windy = UIImage(named: "windy")!
-    let tropical = UIImage(named: "tropical")!
-    let murky = UIImage(named: "murky")!
-    let arid = UIImage(named: "arid")!
-    let artic = UIImage(named: "artic")!
-    let humid = UIImage(named: "humid")!
-    let polluted = UIImage(named: "polluted")!
+    let temperate: [[String] : UIImage] = [["temperate"] : UIImage(named: "temperate")!]
+    let tropical: [[String] : UIImage] = [["tropical"] : UIImage(named: "tropical")!]
+    let murky: [[String] : UIImage] = [["murky"] :  UIImage(named: "murky")!]
+    let arid: [[String] : UIImage] = [["superheated", "hot" ,"arid"] :UIImage(named: "arid")!]
+    let artic: [[String] : UIImage] = [["frigid","frozen"] :  UIImage(named: "artic")!]
+    let polluted: [[String] : UIImage] = [["polluted"] :   UIImage(named: "polluted")!]
     
     
     //EVERY POSSIBLE TERRAIN SORTED BY CATEGORY
@@ -80,38 +70,19 @@ struct ImageHelper {
     }
     
     public func getImageBasedOnClimate(climate: String) -> UIImage? {
+        let collectionOfClimates = [temperate, tropical, murky, arid, artic, polluted]
+        var imageToReturn: UIImage?
         let climateToSet = climate.components(separatedBy: ",").first!
-        if climateToSet == "tropical" {
-            return tropical
+        for typeOfClimate in collectionOfClimates {
+            for key in typeOfClimate.keys {
+                key.forEach { (climateKey) in
+                    if climateToSet == climateKey {
+                        imageToReturn = typeOfClimate.values.first!
+                    }
+                }
+            }
         }
-        if climateToSet == "murky" {
-            return murky
-        }
-        if climateToSet == "arid" {
-            return arid
-        }
-        if climateToSet == "tropical" {
-            return tropical
-        }
-        if climateToSet == "frozen" {
-            return artic
-        }
-        if climateToSet == "frigid" {
-            return artic
-        }
-        if climateToSet == "temperate" {
-            return temperate
-        }
-        if climateToSet == "superheated" {
-            return arid
-        }
-        if climateToSet == "polluted" {
-            return polluted
-        }
-        if climateToSet == "hot" {
-            return arid
-        }
-        return nil
+        return imageToReturn
     }
     //func that sets images to imageView
     public func setupTerrainImages(imagesViews: [UIImageView], terrain: String) {
