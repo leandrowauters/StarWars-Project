@@ -116,6 +116,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to change character!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fvy-DQ-Jfp">
+                    <rect key="frame" x="25" y="716" width="364" height="33"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.00057442253460000001" green="0.16267839070000001" blue="0.23275220390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -123,6 +129,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FnI-lI-9Zt" secondAttribute="trailing" constant="25" id="8VK-6Y-NWu"/>
                 <constraint firstItem="x5S-7I-G57" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AzN-9P-rYr"/>
                 <constraint firstItem="BKw-Mk-N3D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JIY-JS-BWh"/>
+                <constraint firstItem="fvy-DQ-Jfp" firstAttribute="top" secondItem="zAt-un-QDi" secondAttribute="bottom" constant="25" id="KYQ-NB-YxR"/>
                 <constraint firstItem="a4j-eu-aNU" firstAttribute="centerY" secondItem="x5S-7I-G57" secondAttribute="centerY" id="Li6-WA-mZZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zAt-un-QDi" secondAttribute="trailing" constant="25" id="Otu-tk-KPr"/>
                 <constraint firstItem="V73-QB-G9v" firstAttribute="centerY" secondItem="Muk-Ii-eM8" secondAttribute="centerY" id="QW7-Hd-yd1"/>
@@ -133,12 +140,14 @@
                 <constraint firstItem="x5S-7I-G57" firstAttribute="top" secondItem="Muk-Ii-eM8" secondAttribute="bottom" constant="85" id="bji-i3-fgs"/>
                 <constraint firstItem="FnI-lI-9Zt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="d1n-Lz-ind"/>
                 <constraint firstItem="Fka-hM-TqQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="gGy-rh-Hyb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fvy-DQ-Jfp" secondAttribute="trailing" constant="25" id="gZW-ca-UnT"/>
                 <constraint firstItem="FnI-lI-9Zt" firstAttribute="top" secondItem="x5S-7I-G57" secondAttribute="bottom" constant="85" id="hMd-DH-Pk3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fka-hM-TqQ" secondAttribute="trailing" id="j59-dy-Dii"/>
                 <constraint firstItem="a4j-eu-aNU" firstAttribute="leading" secondItem="x5S-7I-G57" secondAttribute="trailing" constant="15" id="kV5-w4-oyE"/>
                 <constraint firstItem="zAt-un-QDi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="keh-IY-iGZ"/>
                 <constraint firstItem="Muk-Ii-eM8" firstAttribute="top" secondItem="BKw-Mk-N3D" secondAttribute="bottom" constant="45" id="kmz-V9-ZZp"/>
                 <constraint firstItem="V73-QB-G9v" firstAttribute="leading" secondItem="Muk-Ii-eM8" secondAttribute="trailing" constant="15" id="lc7-rQ-1p6"/>
+                <constraint firstItem="fvy-DQ-Jfp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="nhs-h6-XWu"/>
                 <constraint firstItem="a4j-eu-aNU" firstAttribute="width" secondItem="a4j-eu-aNU" secondAttribute="height" multiplier="1:1" id="pXK-vP-u9V"/>
                 <constraint firstItem="zAt-un-QDi" firstAttribute="top" secondItem="FnI-lI-9Zt" secondAttribute="bottom" constant="85" id="piz-Gd-cty"/>
                 <constraint firstItem="BKw-Mk-N3D" firstAttribute="top" secondItem="Fka-hM-TqQ" secondAttribute="bottom" id="q0p-WU-912"/>

@@ -19,10 +19,15 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var eyeColorView: RoundedView!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    let person: People.ResultWrapper!
+    var person: People.ResultWrapper! {
+        didSet {
+            setupUI()
+        }
+    }
     let colorHelper = ColorHelper()
     var favoritePressed = true
     var savedPeople = [People.ResultWrapper]()
+    var allPeople = [People.ResultWrapper]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +55,13 @@ class PeopleDetailViewController: UIViewController {
         }
     }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, person: People.ResultWrapper) {
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        person = allPeople.randomElement()
+    }
+    
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, person: People.ResultWrapper, allPeople: [People.ResultWrapper]) {
         self.person = person
+        self.allPeople = allPeople
         super.init(nibName: nil, bundle: nil)
     }
     

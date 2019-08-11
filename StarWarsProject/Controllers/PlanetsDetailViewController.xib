@@ -233,6 +233,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to shuffle planet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsC-Aq-9Ws">
+                    <rect key="frame" x="10" y="621" width="394" height="26"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -240,6 +246,7 @@
                 <constraint firstItem="9Tw-l7-bGN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5Od-MQ-M2y"/>
                 <constraint firstItem="1jd-vS-DiZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="BgY-cH-FSy"/>
                 <constraint firstItem="eln-88-w3v" firstAttribute="top" secondItem="kAX-Iq-oTj" secondAttribute="bottom" id="E1R-9B-nRJ"/>
+                <constraint firstItem="rsC-Aq-9Ws" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ENf-Nh-kHu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kAX-Iq-oTj" secondAttribute="trailing" id="ESy-OP-1nJ"/>
                 <constraint firstItem="mjI-zQ-Nd8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NqM-U9-7dN"/>
                 <constraint firstItem="kAX-Iq-oTj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OCa-7t-ChM"/>
@@ -248,6 +255,7 @@
                 <constraint firstItem="qZi-81-qOo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RQu-Cu-rqq"/>
                 <constraint firstItem="kAX-Iq-oTj" firstAttribute="top" secondItem="THu-zc-qPe" secondAttribute="bottom" id="RhS-ad-86R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1jd-vS-DiZ" secondAttribute="trailing" constant="10" id="TFT-bG-sFB"/>
+                <constraint firstItem="rsC-Aq-9Ws" firstAttribute="top" secondItem="1jd-vS-DiZ" secondAttribute="bottom" constant="25" id="Uy1-b9-1sL"/>
                 <constraint firstItem="qZi-81-qOo" firstAttribute="top" secondItem="eln-88-w3v" secondAttribute="bottom" constant="-2" id="arB-eK-H1o"/>
                 <constraint firstItem="mjI-zQ-Nd8" firstAttribute="top" secondItem="qZi-81-qOo" secondAttribute="bottom" constant="-2" id="bFY-Sf-q6X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1jd-vS-DiZ" secondAttribute="trailing" constant="10" id="cO1-S0-i52"/>
@@ -257,6 +265,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mjI-zQ-Nd8" secondAttribute="trailing" id="j05-xi-YOb"/>
                 <constraint firstItem="eln-88-w3v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nwK-9K-28S"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qZi-81-qOo" secondAttribute="trailing" id="pmR-4D-sb1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rsC-Aq-9Ws" secondAttribute="trailing" constant="10" id="y7s-EA-eEV"/>
                 <constraint firstItem="THu-zc-qPe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yXk-Pw-wzx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -108,7 +108,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let personSelected = people[indexPath.row]
-        let peopleDetailVc = PeopleDetailViewController(nibName: nil, bundle: nil, person: personSelected) // INIT PEOPLE VC TO TAKE THE SELECTED PERSON
+        let peopleDetailVc = PeopleDetailViewController(nibName: nil, bundle: nil, person: personSelected, allPeople: allPeople) // INIT PEOPLE VC TO TAKE THE SELECTED PERSON
         navigationController?.pushViewController(peopleDetailVc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
