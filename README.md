@@ -17,13 +17,13 @@ Star Wars database app that displays every planet and character from the Star Wa
 
 ## Prerequisites
 
-Xcode 10.2.1
-iPhone running  iOS 12
+* Xcode 10.2.1
+* iPhone running  iOS 12
 
 ## Installing
 
-No cocoapods
-Run simulator on Xcode
+* No cocoapods
+* Run simulator on Xcode
 
 ## Author
 Leandro Wauters
