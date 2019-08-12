@@ -35,7 +35,6 @@ class NetworkClient {
         }
         
         currentPage += 1
-        print(endPointURL)
         guard let url = URL(string: endPointURL) else {
             completion(.failure(.badURL), .failure(.badURL))
             return

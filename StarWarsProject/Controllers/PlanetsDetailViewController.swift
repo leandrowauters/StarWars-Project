@@ -31,7 +31,7 @@ class PlanetsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        savedPlanets = DataPersistenceModel.getPlanets()
+        getPlanets()
         setup()
         
     }
@@ -50,6 +50,16 @@ class PlanetsDetailViewController: UIViewController {
         dateCreatedLabel.text = "Date Created:\n\(planet.created.changeDateFormat(dateFormat: "MMM d, yyyy"))"
     }
     
+    private func getPlanets() {
+        DataPersistenceModel.loadSavedFavorites(resource: Resource.Planet) { [weak self] error, planets, people in
+            if let error = error {
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            if let planets = planets {
+                self?.savedPlanets = planets
+            }
+        }
+    }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         planet = allPlanets.randomElement()
     }
@@ -59,7 +69,7 @@ class PlanetsDetailViewController: UIViewController {
     }
     
     @IBAction func favoritePressed(_ sender: UIButton) {
-        let savedPlanets = DataPersistenceModel.getPlanets()
+        getPlanets()
         if savedPlanets.contains(planet) {
             DataPersistenceModel.deletePlanet(planet: planet)
             favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)

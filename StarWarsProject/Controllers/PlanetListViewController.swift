@@ -62,7 +62,14 @@ class PlanetListViewController: UIViewController {
                 self.planetsTableView.frame.origin.x += self.view.bounds.width
             }) { [weak self] done in
                 UIView.animate(withDuration: 0.3, animations: {
-                    self?.planets = DataPersistenceModel.getPlanets()
+                    DataPersistenceModel.loadSavedFavorites(resource: Resource.Planet ,completion: { (error, planets, people) in
+                        if let error = error {
+                            self?.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                        if let planets = planets {
+                            self?.planets = planets
+                        }
+                    })
                     self?.tableViewTitle.text = "Favorites"
                     self?.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
                     self?.favoritePressed = false
@@ -104,9 +111,7 @@ extension PlanetListViewController: UITableViewDelegate, UITableViewDataSource, 
             fatalError()
         }
         let planet = planets[indexPath.row]
-        cell.nameLabel.text = planet.name
-        cell.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
-        cell.selectionStyle = .none
+        cell.configure(with: planet, with: nil)
         return cell
     }
     

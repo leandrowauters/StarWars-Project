@@ -8,6 +8,9 @@
 
 import Foundation
 
+enum DataPersitenceError: Error {
+    case decodingError(Error)
+}
 struct DataPersistenceModel {
     
     private static var planets = [Planet.ResultWrapper]()
@@ -17,20 +20,32 @@ struct DataPersistenceModel {
 
     
     //Get planet from save dir
-    static func getPlanets() -> [Planet.ResultWrapper]{
-        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: planetsSaveLocationFileName).path
+    static func loadSavedFavorites(resource: Resource, completion: @escaping(DataPersitenceError?, [Planet.ResultWrapper]?, [People.ResultWrapper]?) -> Void) {
+        var path = String()
+        if resource == .Planet{
+            path = DataPersistanceManager.filepathToDocumentsDirectory(filename: planetsSaveLocationFileName).path
+        }
+        if resource == .People {
+            path = DataPersistanceManager.filepathToDocumentsDirectory(filename: peopleSaveLocationFileName).path
+        }
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path){
                 do {
-                    planets = try PropertyListDecoder().decode([Planet.ResultWrapper].self, from: data)
+                    if resource == .Planet {
+                        planets = try PropertyListDecoder().decode([Planet.ResultWrapper].self, from: data)
+                        completion(nil, planets, nil)
+                    }
+                    if resource == .People {
+                        people = try PropertyListDecoder().decode([People.ResultWrapper].self, from: data)
+                        completion(nil, nil, people)
+                    }
                 }catch {
-                    print ("property list dedoding error:\(error)")
+                    completion(.decodingError(error), nil, nil)
                 }
             }
         } else {
             print("\(planetsSaveLocationFileName) does not exist")
         }
-        return planets
     }
     
     static func addPlanet(planet: Planet.ResultWrapper){
@@ -54,21 +69,6 @@ struct DataPersistenceModel {
         }
     }
     
-    static func getPeople() -> [People.ResultWrapper]{
-        let path = DataPersistanceManager.filepathToDocumentsDirectory(filename: peopleSaveLocationFileName).path
-        if FileManager.default.fileExists(atPath: path) {
-            if let data = FileManager.default.contents(atPath: path){
-                do {
-                    people = try PropertyListDecoder().decode([People.ResultWrapper].self, from: data)
-                }catch {
-                    print ("property list dedoding error:\(error)")
-                }
-            }
-        } else {
-            print("\(peopleSaveLocationFileName) does not exist")
-        }
-        return people
-    }
     
     static func addPerson(person: People.ResultWrapper){
         people.append(person)

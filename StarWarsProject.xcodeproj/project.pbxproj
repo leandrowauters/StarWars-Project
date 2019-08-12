@@ -21,7 +21,6 @@
 		D559518E22FF2E3C00B6D583 /* PlanetsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */; };
 		D559518F22FF2E3C00B6D583 /* PlanetsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */; };
 		D559519122FF4B0200B6D583 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559519022FF4B0200B6D583 /* ImageHelper.swift */; };
-		D5DE42052300E5C500F7D373 /* ControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE42042300E5C500F7D373 /* ControllerHelper.swift */; };
 		D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */; };
 		D5E8FB4322FDCF31002E4CF2 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */; };
 		D5E8FB4822FDD0A8002E4CF2 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */; };
@@ -30,8 +29,6 @@
 		D5E8FB4D22FDD564002E4CF2 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E8FB4B22FDD564002E4CF2 /* ListCell.xib */; };
 		D5E8FB5222FDDCA5002E4CF2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5122FDDCA5002E4CF2 /* Planet.swift */; };
 		D5E8FB5422FDDCAE002E4CF2 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5322FDDCAE002E4CF2 /* People.swift */; };
-		D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */; };
-		D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */; };
 		D5E8FB5B22FDE902002E4CF2 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E8FB5A22FDE902002E4CF2 /* NetworkClient.swift */; };
 		D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */; };
 		D5FCCAAD22FF7DCA002D5502 /* DataPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCCAAC22FF7DCA002D5502 /* DataPersistenceModel.swift */; };
@@ -55,7 +52,6 @@
 		D559518C22FF2E3C00B6D583 /* PlanetsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDetailViewController.swift; sourceTree = "<group>"; };
 		D559518D22FF2E3C00B6D583 /* PlanetsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetsDetailViewController.xib; sourceTree = "<group>"; };
 		D559519022FF4B0200B6D583 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		D5DE42042300E5C500F7D373 /* ControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerHelper.swift; sourceTree = "<group>"; };
 		D5E8FB4022FDCF31002E4CF2 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		D5E8FB4122FDCF31002E4CF2 /* PeopleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		D5E8FB4622FDD0A8002E4CF2 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
@@ -64,8 +60,6 @@
 		D5E8FB4B22FDD564002E4CF2 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		D5E8FB5122FDDCA5002E4CF2 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		D5E8FB5322FDDCAE002E4CF2 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
-		D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
 		D5E8FB5A22FDE902002E4CF2 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = ../NetworkClient.swift; sourceTree = "<group>"; };
 		D5FCCAAA22FF7D71002D5502 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		D5FCCAAC22FF7DCA002D5502 /* DataPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceModel.swift; sourceTree = "<group>"; };
@@ -148,9 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				D54D0CF722FDCA9E0035AD25 /* IBDesignableViews.swift */,
-				D5E8FB5622FDE2CF002E4CF2 /* NetworkHelper.swift */,
-				D5E8FB5822FDE2F5002E4CF2 /* AppErrors.swift */,
-				D5DE42042300E5C500F7D373 /* ControllerHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -284,12 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DE42052300E5C500F7D373 /* ControllerHelper.swift in Sources */,
 				D5E8FB4222FDCF31002E4CF2 /* PeopleListViewController.swift in Sources */,
 				D54D0CDE22FDBA120035AD25 /* AppDelegate.swift in Sources */,
 				D5FCCAAB22FF7D71002D5502 /* DataPersistanceManager.swift in Sources */,
-				D5E8FB5722FDE2CF002E4CF2 /* NetworkHelper.swift in Sources */,
-				D5E8FB5922FDE2F6002E4CF2 /* AppErrors.swift in Sources */,
 				D559272722FE0B4C00369B33 /* PeopleDetailViewController.swift in Sources */,
 				D54D0CF822FDCA9E0035AD25 /* IBDesignableViews.swift in Sources */,
 				D5E8FB5B22FDE902002E4CF2 /* NetworkClient.swift in Sources */,

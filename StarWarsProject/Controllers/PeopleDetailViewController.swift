@@ -31,7 +31,7 @@ class PeopleDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        savedPeople = DataPersistenceModel.getPeople()
+        getPeople()
         setupUI()
         // Do any additional setup after loading the view.
     }
@@ -58,6 +58,16 @@ class PeopleDetailViewController: UIViewController {
         }
     }
     
+    private func getPeople() {
+        DataPersistenceModel.loadSavedFavorites(resource: Resource.People) { [weak self] error, planet, people in
+            if let error = error {
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            if let people = people {
+                self?.savedPeople = people
+            }
+        }
+    }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         person = allPeople.randomElement()
     }
@@ -72,7 +82,7 @@ class PeopleDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     @IBAction func favoritePressed(_ sender: Any) {
-        let savedPeople = DataPersistenceModel.getPeople()
+        getPeople()
         if savedPeople.contains(person) {
             DataPersistenceModel.deletePeople(person: person)
             favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)

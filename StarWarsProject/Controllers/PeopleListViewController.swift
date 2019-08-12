@@ -66,7 +66,14 @@ class PeopleListViewController: UIViewController {
                 self.peopleTableView.frame.origin.x += self.view.bounds.width
             }) { [weak self] done in
                 UIView.animate(withDuration: 0.3, animations: {
-                    self?.people = DataPersistenceModel.getPeople()
+                    DataPersistenceModel.loadSavedFavorites(resource: Resource.People, completion: { (error, planet, people) in
+                        if let error = error {
+                            self?.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                        if let people = people {
+                            self?.people = people
+                        }
+                    })
                     self?.tableViewTitle.text = "Favorites"
                     self?.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
                     self?.favoritePressed = false
@@ -111,10 +118,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
             fatalError()
         }
         let person = people[indexPath.row] // Current Person
-        cell.nameLabel.text = person.name
-        cell.selectionStyle = .none
-        cell.backgroundColor = #colorLiteral(red: 0.0005744225346, green: 0.1626783907, blue: 0.2327522039, alpha: 1)
-        cell.cellSubView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
+        cell.configure(with: nil, with: person)
         return cell
     }
     
