@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanetListViewController" customModule="StarWarsProject" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Rtp-R7-6Tv" id="FQo-ZP-HND"/>
                 <outlet property="favoriteButton" destination="b2v-XO-CRR" id="WvZ-qY-bUQ"/>
                 <outlet property="planetsTableView" destination="5sw-Zv-3vC" id="LfQ-gy-5Ma"/>
                 <outlet property="tableViewTitle" destination="gY6-Kn-uYD" id="GGW-Tc-h42"/>
@@ -63,7 +64,7 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5sw-Zv-3vC">
                     <rect key="frame" x="0.0" y="259" width="414" height="603"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrp-zm-Pa3">
                     <rect key="frame" x="20" y="64" width="50" height="50"/>
@@ -76,6 +77,9 @@
                         <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="fSC-Sf-hHa"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rtp-R7-6Tv">
+                    <rect key="frame" x="0.0" y="259" width="414" height="603"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.0001123440088" green="0.049079120160000003" blue="0.08748734742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -83,12 +87,16 @@
                 <constraint firstItem="Xrp-zm-Pa3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3oF-nL-n6b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5sw-Zv-3vC" secondAttribute="bottom" id="6EO-nL-01w"/>
                 <constraint firstItem="Xrp-zm-Pa3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="7ZO-bk-pRV"/>
+                <constraint firstItem="Rtp-R7-6Tv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ffn-Zo-Rmh"/>
                 <constraint firstItem="5sw-Zv-3vC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lpi-Zh-gOT"/>
                 <constraint firstItem="XcC-ai-z8M" firstAttribute="top" secondItem="lXG-AT-Dvy" secondAttribute="bottom" id="O3v-SM-Jsc"/>
                 <constraint firstItem="XcC-ai-z8M" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ref-cp-0sc"/>
+                <constraint firstItem="Rtp-R7-6Tv" firstAttribute="top" secondItem="XcC-ai-z8M" secondAttribute="bottom" id="S53-yS-FHU"/>
                 <constraint firstItem="5sw-Zv-3vC" firstAttribute="top" secondItem="XcC-ai-z8M" secondAttribute="bottom" id="Sur-VR-EFE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rtp-R7-6Tv" secondAttribute="trailing" id="X6F-2T-rIn"/>
                 <constraint firstItem="XcC-ai-z8M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XRz-Wf-mFO"/>
                 <constraint firstItem="lXG-AT-Dvy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="ce0-XP-1Zz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Rtp-R7-6Tv" secondAttribute="bottom" id="hOJ-63-YUh"/>
                 <constraint firstItem="lXG-AT-Dvy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r4j-Bm-cJy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lXG-AT-Dvy" secondAttribute="trailing" id="rid-0L-PUF"/>
             </constraints>

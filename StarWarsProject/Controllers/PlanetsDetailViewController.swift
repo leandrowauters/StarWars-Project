@@ -25,13 +25,13 @@ class PlanetsDetailViewController: UIViewController {
             setup()
         }
     }
-    var planetClient = PlanetClient()
-    var savedPlanets = [Planet.ResultWrapper]()
-    var allPlanets = [Planet.ResultWrapper]()
-    let imageHelper = ImageHelper()
+    private var savedPlanets = [Planet.ResultWrapper]()
+    private var allPlanets = [Planet.ResultWrapper]()
+    private let imageHelper = ImageHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        savedPlanets = DataPersistanceModel.getPlanets()
+        getPlanets()
         setup()
         
     }
@@ -50,6 +50,16 @@ class PlanetsDetailViewController: UIViewController {
         dateCreatedLabel.text = "Date Created:\n\(planet.created.changeDateFormat(dateFormat: "MMM d, yyyy"))"
     }
     
+    private func getPlanets() {
+        DataPersistenceModel.loadSavedFavorites(resource: Resource.Planet) { [weak self] error, planets, people in
+            if let error = error {
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            if let planets = planets {
+                self?.savedPlanets = planets
+            }
+        }
+    }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         planet = allPlanets.randomElement()
     }
@@ -59,12 +69,12 @@ class PlanetsDetailViewController: UIViewController {
     }
     
     @IBAction func favoritePressed(_ sender: UIButton) {
-        let savedPlanets = DataPersistanceModel.getPlanets()
+        getPlanets()
         if savedPlanets.contains(planet) {
-            DataPersistanceModel.deletePlanet(planet: planet)
+            DataPersistenceModel.deletePlanet(planet: planet)
             favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
         } else {
-            DataPersistanceModel.addPlanet(planet: planet)
+            DataPersistenceModel.addPlanet(planet: planet)
             favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }

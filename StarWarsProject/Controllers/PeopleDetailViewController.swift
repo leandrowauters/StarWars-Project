@@ -24,19 +24,22 @@ class PeopleDetailViewController: UIViewController {
             setupUI()
         }
     }
-    let colorHelper = ColorHelper()
-    var favoritePressed = true
-    var savedPeople = [People.ResultWrapper]()
-    var allPeople = [People.ResultWrapper]()
+    private let colorHelper = ColorHelper()
+    private var favoritePressed = true
+    private var savedPeople = [People.ResultWrapper]()
+    private var allPeople = [People.ResultWrapper]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPeople()
         setupUI()
-        savedPeople = DataPersistanceModel.getPeople()
         // Do any additional setup after loading the view.
     }
 
     private func setupUI() {
+        if savedPeople.contains(person) {
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+        }
         nameLabel.text = person.name
         hairColorLabel.text = "Hair Color: \(person.hairColor)"
         eyeColorLabel.text = "Eye Color: \(person.eyeColor)"
@@ -55,6 +58,16 @@ class PeopleDetailViewController: UIViewController {
         }
     }
     
+    private func getPeople() {
+        DataPersistenceModel.loadSavedFavorites(resource: Resource.People) { [weak self] error, planet, people in
+            if let error = error {
+                self?.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            if let people = people {
+                self?.savedPeople = people
+            }
+        }
+    }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         person = allPeople.randomElement()
     }
@@ -69,12 +82,12 @@ class PeopleDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     @IBAction func favoritePressed(_ sender: Any) {
-        let savedPeople = DataPersistanceModel.getPeople()
+        getPeople()
         if savedPeople.contains(person) {
-            DataPersistanceModel.deletePeople(person: person)
+            DataPersistenceModel.deletePeople(person: person)
             favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
         } else {
-            DataPersistanceModel.addPerson(person: person)
+            DataPersistenceModel.addPerson(person: person)
             favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }

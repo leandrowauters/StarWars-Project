@@ -13,17 +13,18 @@ enum SortByButtons: String {
 }
 class PeopleListViewController: UIViewController {
     @IBOutlet weak var tableViewTitle: UILabel!
-
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var favoritePressed = true
     
-    let peopleClient = PeopleClient()
-    var allPeople = [People.ResultWrapper]()
-    var people: [People.ResultWrapper] = [] {
+    private var favoritePressed = true
+    private let networkClient = NetworkClient()
+    private var allPeople = [People.ResultWrapper]()
+    private var people: [People.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -36,17 +37,18 @@ class PeopleListViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         fetchPeople()
-        
     }
 
     private func fetchPeople() {
-        peopleClient.fetchPeople { (appError, people) in
-            if let appError = appError {
-                print(appError.errorMessage())
-            }
-            if let people = people {
-                self.people.append(contentsOf: people)
-                self.allPeople.append(contentsOf: people)
+        networkClient.fetchData(resource: .People) { [weak self] peopleResult, planetResult in
+            if let peopleResult = peopleResult {
+                switch peopleResult {
+                case .failure(let error):
+                    self?.showAlert(title: "Failure", message: error.localizedDescription)
+                case .success(let people):
+                    self?.people.append(contentsOf: people)
+                    self?.allPeople.append(contentsOf: people)
+                }
             }
         }
     }
@@ -60,22 +62,45 @@ class PeopleListViewController: UIViewController {
 
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         if favoritePressed {
-            people = DataPersistanceModel.getPeople()
-            tableViewTitle.text = "Favorites"
-            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-            favoritePressed = false
+            UIView.animate(withDuration: 0.3, animations: {
+                self.peopleTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done in
+                UIView.animate(withDuration: 0.3, animations: {
+                    DataPersistenceModel.loadSavedFavorites(resource: Resource.People, completion: { (error, planet, people) in
+                        if let error = error {
+                            self?.showAlert(title: "Error", message: error.localizedDescription)
+                        }
+                        if let people = people {
+                            self?.people = people
+                        }
+                    })
+                    self?.tableViewTitle.text = "Favorites"
+                    self?.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+                    self?.favoritePressed = false
+                    self?.peopleTableView.frame.origin.x -= self!.view.bounds.width
+                })
+            }
         } else {
-            people = allPeople
-            favoritePressed = true
-            tableViewTitle.text = "Planets"
-            favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.peopleTableView.frame.origin.x += self.view.bounds.width
+            }) { [weak self] done in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.people = self!.allPeople
+                    self?.favoritePressed = true
+                    self?.tableViewTitle.text = "People"
+                    self?.favoriteButton.setImage(UIImage(named: "favoriteEmpty"), for: .normal)
+                    self?.peopleTableView.frame.origin.x -= self!.view.bounds.width
+                })
+
+            }
+
         }
     }
     
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)
     }
-    func isLoadingCell(for indexPath: IndexPath) -> Bool { // is it the last cell?
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool { // is it the last cell?
         return indexPath.row >= people.count - 1
         // If so load more data
     }
@@ -90,13 +115,10 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as? ListCell else {
-            return UITableViewCell()
+            fatalError()
         }
         let person = people[indexPath.row] // Current Person
-        cell.nameLabel.text = person.name
-        cell.selectionStyle = .none
-        cell.backgroundColor = #colorLiteral(red: 0.0005744225346, green: 0.1626783907, blue: 0.2327522039, alpha: 1)
-        cell.cellSubView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
+        cell.configure(with: nil, with: person)
         return cell
     }
     
