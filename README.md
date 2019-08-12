@@ -17,8 +17,8 @@ Star Wars database app that displays every planet and character from the Star Wa
 
 ## Images 
 ![](/Assets/WelcomeScreen.PNG)
-![](People1.png)
-![](PlanetDetail.PNG)
+![](/Assets/People1.png)
+![](/Assets/PlanetDetail.PNG)
 ## Prerequisites
 
 * Xcode 10.2.1
