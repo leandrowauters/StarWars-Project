@@ -15,10 +15,10 @@ class PlanetListViewController: UIViewController {
     @IBOutlet weak var tableViewTitle: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let networkClient = NetworkClient()
-    var favoritePressed = true
-    var allPlanets = [Planet.ResultWrapper]()
-    var planets: [Planet.ResultWrapper] = [] {
+    private let networkClient = NetworkClient()
+    private var favoritePressed = true
+    private var allPlanets = [Planet.ResultWrapper]()
+    private var planets: [Planet.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.planetsTableView.reloadData()
@@ -26,6 +26,7 @@ class PlanetListViewController: UIViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPlanets()
@@ -42,14 +43,14 @@ class PlanetListViewController: UIViewController {
         planetsTableView.backgroundColor = #colorLiteral(red: 0.0001123440088, green: 0.04907912016, blue: 0.08748734742, alpha: 1)
     }
     private func fetchPlanets() {
-        networkClient.fetchData(resource: .Planet) { (peopleResult, planetResult) in
+        networkClient.fetchData(resource: .Planet) { [weak self] peopleResult, planetResult in
             if let planetResult = planetResult {
                 switch planetResult {
                 case .failure(let error):
-                    print("error: \(error)")
+                    self?.showAlert(title: "Failure", message: error.localizedDescription)
                 case .success(let planets):
-                    self.planets.append(contentsOf: planets)
-                    self.allPlanets.append(contentsOf: planets)
+                    self?.planets.append(contentsOf: planets)
+                    self?.allPlanets.append(contentsOf: planets)
                 }
             }
         }
@@ -100,7 +101,7 @@ extension PlanetListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell else {
-            return UITableViewCell()
+            fatalError()
         }
         let planet = planets[indexPath.row]
         cell.nameLabel.text = planet.name

@@ -17,10 +17,10 @@ class PeopleListViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    var favoritePressed = true
-    let networkClient = NetworkClient()
-    var allPeople = [People.ResultWrapper]()
-    var people: [People.ResultWrapper] = [] {
+    private var favoritePressed = true
+    private let networkClient = NetworkClient()
+    private var allPeople = [People.ResultWrapper]()
+    private var people: [People.ResultWrapper] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
@@ -40,14 +40,14 @@ class PeopleListViewController: UIViewController {
     }
 
     private func fetchPeople() {
-        networkClient.fetchData(resource: .People) { (peopleResult, planetResult) in
+        networkClient.fetchData(resource: .People) { [weak self] peopleResult, planetResult in
             if let peopleResult = peopleResult {
                 switch peopleResult {
                 case .failure(let error):
-                    print("error: \(error)")
+                    self?.showAlert(title: "Failure", message: error.localizedDescription)
                 case .success(let people):
-                    self.people.append(contentsOf: people)
-                    self.allPeople.append(contentsOf: people)
+                    self?.people.append(contentsOf: people)
+                    self?.allPeople.append(contentsOf: people)
                 }
             }
         }
@@ -93,7 +93,7 @@ class PeopleListViewController: UIViewController {
     @IBAction func backPressed(_ sender: Any) {
        navigationController?.popViewController(animated: true)
     }
-    func isLoadingCell(for indexPath: IndexPath) -> Bool { // is it the last cell?
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool { // is it the last cell?
         return indexPath.row >= people.count - 1
         // If so load more data
     }
@@ -108,7 +108,7 @@ extension PeopleListViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as? ListCell else {
-            return UITableViewCell()
+            fatalError()
         }
         let person = people[indexPath.row] // Current Person
         cell.nameLabel.text = person.name

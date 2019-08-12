@@ -15,6 +15,7 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var cellSubView: RoundedView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

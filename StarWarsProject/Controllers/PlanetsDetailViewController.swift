@@ -25,10 +25,10 @@ class PlanetsDetailViewController: UIViewController {
             setup()
         }
     }
-    var planetClient = PlanetClient()
-    var savedPlanets = [Planet.ResultWrapper]()
-    var allPlanets = [Planet.ResultWrapper]()
-    let imageHelper = ImageHelper()
+    private var savedPlanets = [Planet.ResultWrapper]()
+    private var allPlanets = [Planet.ResultWrapper]()
+    private let imageHelper = ImageHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         savedPlanets = DataPersistenceModel.getPlanets()

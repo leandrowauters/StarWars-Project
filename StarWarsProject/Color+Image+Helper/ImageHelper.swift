@@ -9,15 +9,6 @@
 import Foundation
 import UIKit
 struct ImageHelper {
-    
-
-
-
-//    if climateToSet == "polluted" {
-//    return polluted
-//    }
-
-    
     //IMAGES FOR CLIMATE
     let temperate: [[String] : UIImage] = [["temperate"] : UIImage(named: "temperate")!]
     let tropical: [[String] : UIImage] = [["tropical"] : UIImage(named: "tropical")!]
@@ -25,7 +16,6 @@ struct ImageHelper {
     let arid: [[String] : UIImage] = [["superheated", "hot" ,"arid"] :UIImage(named: "arid")!]
     let artic: [[String] : UIImage] = [["frigid","frozen"] :  UIImage(named: "artic")!]
     let polluted: [[String] : UIImage] = [["polluted"] :   UIImage(named: "polluted")!]
-    
     
     //EVERY POSSIBLE TERRAIN SORTED BY CATEGORY
     let cityTerrain: [[String] : UIImage] = [["cityscape", "cities", " urban", "urban"] : UIImage(named: "city")!]
@@ -41,9 +31,6 @@ struct ImageHelper {
     let seaTerrain: [[String] : UIImage] = [[" seas"," oceans","ocean"," rivers"] : UIImage(named: "sea")!]
     let desertTerrain: [[String] : UIImage] = [[" rocky deserts","deserts"] : UIImage(named: "desert")!]
     let fieldTerrain: [[String] : UIImage] = [[" fields","verdant","grassy hills"," plateaus","plains"," vines"] : UIImage(named: "field")!]
-    
-    
-   
     
     //func that returns image based on terrain category
     public func getImageBasedOnTerrain(terrain: String) -> [UIImage] {

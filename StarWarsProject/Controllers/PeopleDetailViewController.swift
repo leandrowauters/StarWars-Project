@@ -24,19 +24,22 @@ class PeopleDetailViewController: UIViewController {
             setupUI()
         }
     }
-    let colorHelper = ColorHelper()
-    var favoritePressed = true
-    var savedPeople = [People.ResultWrapper]()
-    var allPeople = [People.ResultWrapper]()
+    private let colorHelper = ColorHelper()
+    private var favoritePressed = true
+    private var savedPeople = [People.ResultWrapper]()
+    private var allPeople = [People.ResultWrapper]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         savedPeople = DataPersistenceModel.getPeople()
+        setupUI()
         // Do any additional setup after loading the view.
     }
 
     private func setupUI() {
+        if savedPeople.contains(person) {
+            favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+        }
         nameLabel.text = person.name
         hairColorLabel.text = "Hair Color: \(person.hairColor)"
         eyeColorLabel.text = "Eye Color: \(person.eyeColor)"
